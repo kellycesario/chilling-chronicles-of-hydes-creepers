@@ -1,4 +1,4 @@
-import { Headings } from '@/components/atoms/Heading'
+import { Headings } from '@/components/atoms/Headings'
 
 export default function Home() {
   return (
@@ -6,9 +6,10 @@ export default function Home() {
       <Headings
         align='center'
         level='1'
-        color=''
+        color='gray'
         children="Chilling Chronicles of Hyde's Creepers"
       />
+     
     </main>
   )
 }
