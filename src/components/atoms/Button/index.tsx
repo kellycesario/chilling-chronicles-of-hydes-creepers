@@ -10,7 +10,6 @@ type ButtonProps = {
   hasIcon?: boolean
   level?: string
   onClick?: () => void
-  reset?: boolean
   target?: string
 }
 
@@ -23,7 +22,6 @@ export const Button = ({
   icon,
   level,
   onClick,
-  reset,
   target,
 }: ButtonProps) => {
   const classList = [
@@ -39,7 +37,7 @@ export const Button = ({
       {isButton ? (
         <button
           onClick={onClick}
-          className={reset ? className : combinedClassName}
+          className={combinedClassName}
         >
           {hasIcon && (
             <svg width='32' height='32' viewBox='0 0 32 32'>
@@ -51,7 +49,7 @@ export const Button = ({
       ) : (
         <Link href={href || ''} target={target} className={combinedClassName}>
           {hasIcon && (
-            <svg width='32' height='32' viewBox='0 0 32 32' fill='purple'>
+            <svg width='32' height='32' viewBox='0 0 32 32'>
               <use href={`#${icon}`} xlinkHref={`#${icon}`} />
             </svg>
           )}
