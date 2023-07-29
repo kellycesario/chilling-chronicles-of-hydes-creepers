@@ -1,0 +1,63 @@
+@import '@/styles/index.scss';
+
+.button {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, auto);
+  gap: 1rem;
+  border-radius: 0.8rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: normal;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-transform: capitalize;
+  width: -webkit-fill-available;
+  height: 6rem;
+  cursor: pointer;
+
+  &__icon {
+    fill: $purple;
+    width: -webkit-fill-available;
+    transition: fill 0.3s ease;
+    &:hover,
+    &:focus {
+      fill: $white;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $burgundy;
+    color: $white;
+    border: none;
+  }
+
+  &:active {
+    background-color: $burgundy;
+    color: $white;
+    border: 2px solid $white;
+  }
+
+  &--primary {
+    border: 2px solid $purple;
+    background-color: transparent;
+    color: $purple;
+  }
+
+  &--secondary {
+    border: 2px solid $black;
+    background-color: transparent;
+    color: $black;
+    @extend .button__icon;
+    fill: $black;
+  }
+
+  &--tertiary {
+    border: 2px solid $white;
+    background-color: transparent;
+    color: $white;
+    @extend .button__icon;
+    fill: $white;
+  }
+}
