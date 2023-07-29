@@ -12,7 +12,7 @@ export const Headings = ({ align, children, color, level }: HeadingsProps) => {
     styles.headings,
     styles[`headings--${align}`],
     styles[`headings--${color}`],
-    styles[`headings--H${level}`],
+    styles[`headings--h${level}`],
   ]
 
   const props = { className: classList.join(' ') }
