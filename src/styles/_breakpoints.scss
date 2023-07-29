@@ -1,0 +1,17 @@
+$breakpoints: (
+  'mobile': 375px,
+  'tablet': 744px,
+  'desktop': 1200px,
+);
+
+@mixin screen-size($breakpoint) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @if $breakpoint-value {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' not found in the global breakpoints map.";
+  }
+}
