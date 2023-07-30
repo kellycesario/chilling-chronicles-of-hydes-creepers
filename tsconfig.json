@@ -2,8 +2,15 @@
   "compilerOptions": {
     "baseUrl": "./src/",
     "paths": {
-      "@/components/*" : ["components/*"],
-      "@/styles/*" : ["styles/*"]
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/utils/*": [
+        "utils/*"
+      ]
     },
     "lib": [
       "dom",
