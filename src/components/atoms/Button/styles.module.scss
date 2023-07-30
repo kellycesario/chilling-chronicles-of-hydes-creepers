@@ -6,7 +6,7 @@
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   line-height: normal;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
   text-transform: capitalize;
   width: -webkit-fill-available;
   height: 6rem;
@@ -34,7 +34,7 @@
     
     fill: $purple;
     width: -webkit-fill-available;
-    transition: fill 0.3s ease, color 0.3s ease, background-color 0.3s ease,
+    transition: all 0.3s ease,
       border 0.3s ease;
     &:hover,
     &:focus {
