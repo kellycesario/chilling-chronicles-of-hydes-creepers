@@ -49,7 +49,7 @@ type Story = StoryObj<typeof button>
 
 export const Primary: Story = {
   args: {
-    children: 'Button',
+    label: 'Button',
     isButton: true,
     hasIcon: true,
     level: 'primary',
@@ -63,7 +63,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    children: 'Button',
+    label: 'Button',
     isButton: true,
     hasIcon: true,
     level: 'secondary',
@@ -76,7 +76,7 @@ export const Secondary: Story = {
 
 export const Tertiary: Story = {
   args: {
-    children: 'Button',
+    label: 'Button',
     isButton: true,
     hasIcon: true,
     level: 'tertiary',
@@ -89,7 +89,7 @@ export const Tertiary: Story = {
 
 export const Link: Story = {
   args: {
-    children: 'Link',
+    label: 'Link',
     isButton: false,
     hasIcon: true,
     level: 'primary',

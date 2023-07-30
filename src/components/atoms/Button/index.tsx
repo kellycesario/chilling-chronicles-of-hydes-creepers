@@ -2,24 +2,24 @@ import Link from 'next/link'
 import styles from './styles.module.scss'
 
 type ButtonProps = {
-  children?: string
   className?: string
   href?: string
   icon?: string
   isButton?: boolean
   hasIcon?: boolean
+  label?: string
   level?: string
   onClick?: () => void
   target?: string
 }
 
 export const Button = ({
-  children,
   className = '',
   href,
   isButton = true,
   hasIcon = false,
   icon,
+  label,
   level,
   onClick,
   target,
@@ -44,7 +44,7 @@ export const Button = ({
               <use href={`#${icon}`} xlinkHref={`#${icon}`} />
             </svg>
           )}
-          {children}
+          {label}
         </button>
       ) : (
         <Link href={href || ''} target={target} className={combinedClassName}>
@@ -53,7 +53,7 @@ export const Button = ({
               <use href={`#${icon}`} xlinkHref={`#${icon}`} />
             </svg>
           )}
-          {children}
+          {label}
         </Link>
       )}
     </>
