@@ -1,0 +1,35 @@
+@import '@/styles/index.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2.25rem;
+  gap: 3rem;
+  border: 1px solid $purple;
+  max-width: 34rem;
+
+  @include screen-size('desktop') {
+    max-width: 42rem;
+  }
+
+  &__picture {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 16rem;
+  }
+
+  &__container {
+    display: flex;
+    column-gap: 2.2rem;
+    cursor: pointer;
+  }
+
+  &__icon {
+    &:hover,
+    &:focus {
+      fill: $purple;
+    }
+  }
+}
