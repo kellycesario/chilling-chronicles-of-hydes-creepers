@@ -1,3 +1,5 @@
+'use client'
+
 import { Headings } from '@/components/atoms/Headings'
 
 export default function Home() {
