@@ -1,0 +1,18 @@
+@import '@/styles/index.scss';
+
+.accordionItem {
+  padding: 2.4rem;
+
+  &__expanded {
+    border-radius: 0.8rem;
+    border: 2px solid $purple;
+  }
+  
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.6rem;
+    font-weight: 600;
+  }
+}
