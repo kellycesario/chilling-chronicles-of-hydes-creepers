@@ -1,0 +1,69 @@
+@import '@/styles/index.scss';
+
+.header {
+  background: $linear-purple-02;
+  padding: 4rem 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include screen-size('desktop') {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__navigation {
+    display: contents;
+  }
+
+  &__open {
+    display: flex;
+    gap: 1rem;
+    @include screen-size('tablet') {
+      gap: 6rem;
+    }
+    @include screen-size('desktop') {
+      display: none;
+    }
+
+    &__toggle {
+      display: none;
+      @include screen-size('desktop') {
+        display: block;
+      }
+    }
+  }
+  &__closed {
+    display: none;
+    @include screen-size('desktop') {
+      display: flex;
+      gap: 5rem;
+    }
+
+    @include screen-size('desktop-lg') {
+      gap: 9rem;
+    }
+  }
+
+  &__toggle {
+    display: block;
+    fill: $black;
+
+    &:hover {
+      fill: $purple;
+    }
+    @include screen-size('desktop') {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: none;
+    @include screen-size('desktop') {
+      display: flex;
+      max-width: 18rem;
+      place-self: end;
+      margin-right: 4rem;
+    }
+  }
+}
