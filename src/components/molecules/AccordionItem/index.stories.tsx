@@ -6,7 +6,7 @@ export default {
   title: 'Molecules/AccordionItem',
   tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
   },
   args: {
     question: 'ISBN',
