@@ -1,0 +1,10 @@
+@import '@/styles/index.scss';
+
+.logo {
+  fill: $black;
+  
+  &:hover,
+  &:focus {
+    fill: $burgundy;
+  }
+}
