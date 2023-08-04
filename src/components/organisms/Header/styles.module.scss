@@ -37,6 +37,7 @@
     display: none;
     @include screen-size('desktop') {
       display: flex;
+      justify-content: center;
       gap: 5rem;
     }
 
