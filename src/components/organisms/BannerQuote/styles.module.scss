@@ -1,0 +1,50 @@
+@import '@/styles/index.scss';
+.quote {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+
+  max-width: 144rem;
+  height: 50rem;
+
+  background: center/cover no-repeat;
+
+  &__button {
+    opacity: 80%;
+    cursor: pointer;
+    svg {
+      padding: 1rem;
+      background-color: $light-gray;
+      border-radius: 50%;
+
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 16rem;
+
+    @include screen-size('tablet') {
+      width: 34rem;
+    }
+
+    @include screen-size('desktop') {
+      width: 41.7rem;
+    }
+  }
+
+  svg {
+    fill: $burgundy;
+
+    &:hover,
+    &:focus {
+      fill: $purple;
+    }
+  }
+}
