@@ -1,0 +1,22 @@
+@import '@/styles/index.scss';
+
+.tag {
+  border-radius: 8px;
+  background: $gray;
+  padding: 5px 10px;
+
+  &__author {
+    color: $white;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.6rem;
+
+    @include screen-size('tablet') {
+      font-size: 2rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 2.4rem;
+    }
+  }
+}
