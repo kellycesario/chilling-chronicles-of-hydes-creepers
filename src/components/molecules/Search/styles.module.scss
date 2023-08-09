@@ -1,0 +1,23 @@
+@import '@/styles/index.scss';
+
+.search {
+    @include text();
+
+  &__container {
+    display: flex;
+    align-items: center;
+    border-radius: 0.8rem;
+    border: 2px solid $purple;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: $white;
+  }
+
+  &__input {
+    width: 100%;
+    text-align: start;
+    @include text();
+  }
+}
