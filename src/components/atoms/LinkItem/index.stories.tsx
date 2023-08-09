@@ -1,3 +1,4 @@
+import { Sprites } from '@/components/ions/Sprites'
 import { LinkItem } from './index'
 
 export default {
@@ -10,6 +11,8 @@ export default {
   args: {
     children: 'This is a link',
     href: '/',
+    hasIcon: false,
+    icon: 'books',
   },
   argTypes: {
     href: {
@@ -17,6 +20,20 @@ export default {
         disable: true,
       },
     },
+    icon: {
+      control: { type: 'select' },
+      options: ['linkedin', 'twitter', 'discord'],
+    }
   },
+  decorators: [
+    (Story) => {
+      return (
+        <div>
+          <Sprites />
+          <Story />
+        </div>
+      )
+    },
+  ],
 }
 export const Default = {}
