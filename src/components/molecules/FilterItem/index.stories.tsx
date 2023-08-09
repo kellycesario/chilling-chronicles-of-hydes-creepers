@@ -1,34 +1,22 @@
 import { Sprites } from '@/components/ions/Sprites'
-import { LinkItem } from './index'
+import { FilterItem } from './index'
 
 export default {
-  component: LinkItem,
-  title: 'Atoms/LinkItem',
+  component: FilterItem,
+  title: 'Molecules/FilterItem',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
   args: {
-    children: 'This is a link',
-    href: '/',
-    hasIcon: false,
-    icon: 'books',
+    icon: 'ghost',
+    label: 'Ghosts',
   },
   argTypes: {
-    href: {
-      table: {
-        disable: true,
-      },
-    },
-    hasIcon: {
-      table: {
-        disable: true,
-      },
-    },
     icon: {
       control: { type: 'select' },
-      options: ['linkedin', 'twitter', 'discord'],
-    }
+      options: ['fire', 'alien', 'skull', 'cross', 'books', 'ghost'],
+    },
   },
   decorators: [
     (Story) => {
@@ -41,4 +29,5 @@ export default {
     },
   ],
 }
+
 export const Default = {}

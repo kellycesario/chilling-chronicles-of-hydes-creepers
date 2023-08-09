@@ -17,6 +17,11 @@ export default {
       control: { type: 'select' },
       options: ['right', 'center', 'left'],
     },
+    weight: {
+      control: { type: 'select' },
+      options: ['Default', '600'],
+     
+    },
     color: {
       control: { type: 'select' },
       options: [

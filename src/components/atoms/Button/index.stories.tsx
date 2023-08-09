@@ -6,9 +6,6 @@ const button = {
   title: 'Atoms/Button',
   component: Button,
   tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
   argTypes: {
     className: {
       table: {
@@ -29,6 +26,10 @@ const button = {
       table: {
         disable: true,
       },
+    },
+    icon: {
+      control: { type: 'select' },
+      options: ['fire', 'alien', 'skull', 'cross', 'books', 'ghost'],
     },
   },
   decorators: [
@@ -55,10 +56,6 @@ export const Primary: Story = {
     level: 'primary',
     icon: 'cross',
   },
-
-  parameters: {
-    backgrounds: { default: 'purple' },
-  },
 }
 
 export const Secondary: Story = {
@@ -68,9 +65,6 @@ export const Secondary: Story = {
     hasIcon: true,
     level: 'secondary',
     icon: 'cross',
-  },
-  parameters: {
-    backgrounds: { default: 'light-gray' },
   },
 } as Meta<typeof Button>
 
@@ -99,6 +93,9 @@ export const Link: Story = {
     level: {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'tertiary'],
+    },
+    parameters: {
+      backgrounds: { default: 'light-gray' },
     },
   },
 } as Meta<typeof Button>

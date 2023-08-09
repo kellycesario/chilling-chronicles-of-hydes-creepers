@@ -44,6 +44,11 @@ export default {
         disable: true,
       },
     },
+    size: {
+      table: {
+        disable: true,
+      },
+    },
   },
 }
 

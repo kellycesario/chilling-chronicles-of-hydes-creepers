@@ -1,19 +1,12 @@
 import { Sprites } from '@/components/ions/Sprites'
-import { BannerQuote } from './index'
+import { Contact } from './index'
 
 export default {
-  component: BannerQuote,
-  title: 'Organisms/BannerQuote',
+  component: Contact,
+  title: 'Organisms/Contact',
   tags: ['autodocs'],
-  args: {
-    image: '/bg.png',
-  },
-  argTypes: {
-    image: {
-      table: {
-        disable: true,
-      },
-    },
+  parameters: {
+    layout: 'fullscreen',
   },
   decorators: [
     (Story) => {
