@@ -38,7 +38,7 @@
     @include screen-size('desktop') {
       display: flex;
       justify-content: center;
-      gap: 5rem;
+      gap: 4rem;
     }
 
     @include screen-size('desktop-lg') {
@@ -51,7 +51,7 @@
     fill: $black;
 
     &:hover {
-      fill: $purple;
+      fill: $burgundy;
     }
     @include screen-size('desktop') {
       display: none;
