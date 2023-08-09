@@ -1,15 +1,14 @@
 @import '@/styles/index.scss';
 
 .input {
-  border-radius: 0.8rem;
-  border: 2px solid var(--purple, #765ba8);
   display: flex;
   gap: 2rem;
-  margin-top: 2rem;
-  @include text();
+  margin: 2rem 0;
   padding: 2rem;
-  margin-bottom: 2rem;
+  border-radius: 0.8rem;
+  border: 2px solid $purple;
   background-color: $white;
+  @include text();
 
   &__label {
     @include text();
