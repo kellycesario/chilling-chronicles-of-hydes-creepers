@@ -1,0 +1,33 @@
+[
+  {
+    "icon": "skull",
+    "id": "name",
+    "label": "name",
+    "placeholder": "Bloody Mary",
+    "type": "text",
+    "isTextarea": false
+  },
+  {
+    "icon": "at-sign",
+    "id": "email",
+    "label": "email address",
+    "placeholder": "bloody.mary@hell.com",
+    "type": "email",
+    "isTextarea": false
+  },
+  {
+    "icon": "fire",
+    "id": "summoning",
+    "label": "Subject",
+    "placeholder": "Summoning",
+    "type": "text",
+    "isTextarea": false
+  },
+  {
+    "icon": "plus",
+    "id": "message",
+    "label": "Message",
+    "placeholder": "Dark secrets lie beyond...",
+    "isTextarea": true
+  }
+]
