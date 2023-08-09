@@ -52,7 +52,7 @@
       font-size: 2.4rem;
     }
   }
-  
+
   &--h6 {
     font-size: 1.4rem;
     @include screen-size('tablet') {
@@ -63,43 +63,7 @@
     }
   }
 
-  &--left {
-    text-align: left;
-  }
+  @include colors();
 
-  &--right {
-    text-align: right;
-  }
-
-  &--center {
-    text-align: center;
-  }
-
-  &--black {
-    color: $black;
-  }
-
-  &--white {
-    color: $white;
-  }
-
-  &--gray {
-    color: $gray;
-  }
-
-  &--light-gray {
-    color: $light-gray;
-  }
-
-  &--burgundy {
-    color: $burgundy;
-  }
-
-  &--purple {
-    color: $purple;
-  }
-
-  &--light-purple {
-    color: $light-purple;
-  }
+  @include align();
 }
