@@ -1,14 +1,16 @@
 import styles from './styles.module.scss'
 
 type FilterItemProps = {
-  ariaLabel: string
   icon: string
-  children: string
+  label: string
 }
 
-export const FilterItem = ({ ariaLabel, children, icon }: FilterItemProps) => {
+export const FilterItem = ({ icon, label }: FilterItemProps) => {
   return (
-    <li aria-label={ariaLabel} className={styles.filterItem}>
+    <li
+      aria-label={`{ Filter your chronichles by ${label}`}
+      className={styles.filterItem}
+    >
       <svg
         width='32'
         height='32'
@@ -17,7 +19,7 @@ export const FilterItem = ({ ariaLabel, children, icon }: FilterItemProps) => {
       >
         <use xlinkHref={`#${icon}`} href={`#${icon}`} />
       </svg>
-      {children}
+      {label}
     </li>
   )
 }
