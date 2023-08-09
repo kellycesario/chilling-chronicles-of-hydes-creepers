@@ -2,9 +2,8 @@ import { FilterItem } from '@/components/molecules/FilterItem'
 import { Select } from '@/components/molecules/Select'
 import { useEffect, useState } from 'react'
 
-type FilterProps = {}
 
-export const Filter = ({}: FilterProps) => {
+export const Filter = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200)
 
   useEffect(() => {
@@ -20,10 +19,10 @@ export const Filter = ({}: FilterProps) => {
   }, [])
 
   return isMobile ? (
-    <Select label='Search by topic' />
+    <Select image='/arrow.svg' label='Search by topic' />
   ) : (
     <ul>
-      <FilterItem ariaLabel='a' icon='books' children='this is a topic' />
+      <FilterItem icon='books' label='This is a topic' />
     </ul>
   )
 }
