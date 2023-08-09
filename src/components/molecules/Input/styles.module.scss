@@ -1,0 +1,23 @@
+@import '@/styles/index.scss';
+
+.input {
+  border-radius: 0.8rem;
+  border: 2px solid var(--purple, #765ba8);
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  @include text();
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: $white;
+
+  &__label {
+    @include text();
+    text-transform: capitalize;
+    color: $white;
+  }
+
+  &__field {
+    width: 100%;
+  }
+}
