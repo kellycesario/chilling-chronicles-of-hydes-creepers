@@ -1,14 +1,14 @@
 [
   {
     "children": "Blog",
-    "href": "/"
+    "href": "/chilling-blog"
   },
   {
     "children": "Get in Touch",
-    "href": "/"
+    "href": "/summon-us"
   },
   {
     "children": "About Us",
-    "href": "/"
+    "href": "/about-us"
   }
 ]
