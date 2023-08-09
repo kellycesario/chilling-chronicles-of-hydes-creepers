@@ -1,59 +1,11 @@
 @import '@/styles/index.scss';
 
 .text {
-  font-weight: 300;
-  font-size: 1.6rem;
-  line-height: 160%;
+  @include text();
 
-  @include screen-size('tablet') {
-    font-size: 2rem;
-    line-height: 170%;
-  }
+  @include colors();
 
-  @include screen-size('desktop') {
-    font-size: 2.4rem;
-    line-height: 180%;
-  }
-
-  &--left {
-    text-align: left;
-  }
-
-  &--right {
-    text-align: right;
-  }
-
-  &--center {
-    text-align: center;
-  }
-
-  &--black {
-    color: $black;
-  }
-
-  &--white {
-    color: $white;
-  }
-
-  &--gray {
-    color: $gray;
-  }
-
-  &--light-gray {
-    color: $light-gray;
-  }
-
-  &--burgundy {
-    color: $burgundy;
-  }
-
-  &--purple {
-    color: $purple;
-  }
-
-  &--light-purple {
-    color: $light-purple;
-  }
+  @include align();
 
   &--600 {
     font-weight: 600;
