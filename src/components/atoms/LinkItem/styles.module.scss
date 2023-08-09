@@ -1,26 +1,18 @@
 @import '@/styles/index.scss';
 
 .link {
-  font-weight: 300;
-  font-size: 1.6rem;
-  line-height: 160%;
+  @include text;
   cursor: pointer;
   color: $black;
-
-  @include screen-size('tablet') {
-    font-size: 2rem;
-    line-height: 170%;
-  }
-
-  @include screen-size('desktop') {
-    font-size: 2.4rem;
-    line-height: 180%;
-  }
 
   &:hover,
   &:focus,
   &:visited {
     font-weight: 600;
     color: $purple;
+
+    & svg {
+      fill: $purple;
+    }
   }
 }
