@@ -46,6 +46,44 @@ button {
   border: none;
 }
 
+form,
+fieldset,
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='url'],
+input[type='number'],
+input[type='tel'],
+input[type='search'],
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'] {
+  -webkit-appearance: none;
+}
+
+option {
+  background-color: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
 body,
 h1,
 h2,
