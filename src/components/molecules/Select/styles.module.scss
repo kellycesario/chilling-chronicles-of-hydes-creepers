@@ -1,0 +1,30 @@
+@import '@/styles/index.scss';
+
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+
+  &__label {
+    @include text();
+  }
+
+  &__dropdown {
+    @include text();
+
+    border-radius: 0.8rem;
+    border: 2px solid $purple;
+    width: 100%;
+    padding: 2rem;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    color: $burgundy !important;
+    font-weight: 300 !important;
+  }
+}
