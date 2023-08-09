@@ -1,0 +1,59 @@
+@mixin text() {
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 160%;
+
+  @include screen-size('tablet') {
+    font-size: 2rem;
+    line-height: 170%;
+  }
+
+  @include screen-size('desktop') {
+    font-size: 2.4rem;
+    line-height: 180%;
+  }
+}
+
+@mixin colors() {
+  &--black {
+    color: $black;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--gray {
+    color: $gray;
+  }
+
+  &--light-gray {
+    color: $light-gray;
+  }
+
+  &--burgundy {
+    color: $burgundy;
+  }
+
+  &--purple {
+    color: $purple;
+  }
+
+  &--light-purple {
+    color: $light-purple;
+  }
+}
+
+@mixin align() {
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
