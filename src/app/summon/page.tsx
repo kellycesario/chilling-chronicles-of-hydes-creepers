@@ -1,9 +1,13 @@
 'use client'
 
+import { BannerQuote } from '@/components/organisms/BannerQuote'
+import { Contact } from '@/components/organisms/Contact'
+
 export default function Summon() {
   return (
-    <main>
-      <div>It's me, Hi!</div>
-    </main>
+    <section>
+      <Contact />
+      <BannerQuote image='/bg.png' />
+    </section>
   )
 }
