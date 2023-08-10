@@ -1,17 +1,11 @@
 'use client'
 
-import { Headings } from '@/components/atoms/Headings'
+import { MainHeader } from '@/components/organisms/MainHeader'
 
 export default function Home() {
   return (
     <main>
-      <Headings
-        align='center'
-        level='1'
-        color='gray'
-        children="Chilling Chronicles of Hyde's Creepers"
-      />
-     
+      <MainHeader image='/hero-homescreen.png' />
     </main>
   )
 }

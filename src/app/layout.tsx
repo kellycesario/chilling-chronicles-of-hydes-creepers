@@ -2,7 +2,6 @@
 
 import { Sprites } from '@/components/ions/Sprites'
 import { Footer } from '@/components/organisms/Footer'
-import { Header } from '@/components/organisms/Header'
 import '@/styles/main.scss'
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
@@ -22,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang='en' className={openSans.className}>
       <body>
-        <Header />
         {children}
         <Sprites />
         <Footer />
