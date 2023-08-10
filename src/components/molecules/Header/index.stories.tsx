@@ -3,7 +3,7 @@ import { Header } from './index'
 
 export default {
   component: Header,
-  title: 'Organisms/Header',
+  title: 'Molecules/Header',
   tags: ['autodocs'],
   parameters: {
   },

@@ -1,7 +1,6 @@
 @import '@/styles/index.scss';
 
 .header {
-  background: $linear-purple-02;
   padding: 4rem 2.3rem;
   display: flex;
   justify-content: space-between;
@@ -10,6 +9,8 @@
   @include screen-size('desktop') {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    max-width: 144rem;
+    margin: 0 auto;
   }
 
   &__navigation {
