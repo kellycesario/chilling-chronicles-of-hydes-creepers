@@ -57,3 +57,7 @@
     text-align: center;
   }
 }
+
+@mixin layout() {
+  background: linear-gradient(180deg, #c4c2ff 0%, #e5e5e5 100%);
+}
