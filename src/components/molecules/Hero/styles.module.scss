@@ -20,17 +20,17 @@
 
   &__picture {
     width: 100%;
-    max-width: 310px;
-    max-height: 224.86px;
+    max-width: 31rem;
+    max-height: 22.4rem;
 
     @include screen-size('tablet') {
-      max-width: 487px;
-      max-height: 383.16px;
+      max-width: 48.7rem;
+      max-height: 38.3rem;
     }
 
     @include screen-size('desktop') {
-      max-width: 642.65px;
-      max-height: 519px;
+      max-width: 64.2rem;
+      max-height: 51.9rem;
     }
   }
 }
