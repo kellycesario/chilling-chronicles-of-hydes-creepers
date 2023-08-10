@@ -5,9 +5,14 @@
   cursor: pointer;
   color: $black;
 
+  @include screen-size('desktop') {
+    width: 20rem;
+  }
+
   &:hover,
   &:focus,
-  &:visited {
+  &:visited,
+  &:active {
     font-weight: 600;
     color: $purple;
 
