@@ -1,0 +1,36 @@
+@import '@/styles/index.scss';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 10.2rem 2.3rem 17.3rem;
+  @include screen-size('desktop') {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    max-width: 144rem;
+    margin: 0 auto;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+  }
+
+  &__picture {
+    width: 100%;
+    max-width: 310px;
+    max-height: 224.86px;
+
+    @include screen-size('tablet') {
+      max-width: 487px;
+      max-height: 383.16px;
+    }
+
+    @include screen-size('desktop') {
+      max-width: 642.65px;
+      max-height: 519px;
+    }
+  }
+}
