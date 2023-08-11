@@ -1,3 +1,4 @@
+import { Icon } from '@/components/atoms/Icon'
 import { LinkItem } from '@/components/atoms/LinkItem'
 import { Text } from '@/components/atoms/Text'
 import navigation from '@/data/navigation.json'
@@ -16,9 +17,7 @@ export const Footer = () => {
 
       <div className={styles.footer__credits}>
         <Text align='left' children='Made with' color='black' />
-        <svg width='32' height='32' viewBox='0 0 32 32' fill='purple'>
-          <use xlinkHref='#ghost' href='#ghost' />
-        </svg>
+        <Icon icon='ghost' fill='#765BA8' />
         <Text align='left' children='for chilling people' color='black' />
       </div>
     </footer>

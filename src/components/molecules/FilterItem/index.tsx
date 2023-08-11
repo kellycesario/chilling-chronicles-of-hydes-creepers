@@ -1,3 +1,4 @@
+import { Icon } from '@/components/atoms/Icon'
 import styles from './styles.module.scss'
 
 type FilterItemProps = {
@@ -11,14 +12,7 @@ export const FilterItem = ({ icon, label }: FilterItemProps) => {
       aria-label={`{ Filter your chronichles by ${label}`}
       className={styles.filterItem}
     >
-      <svg
-        width='32'
-        height='32'
-        viewBox='0 0 32 32'
-        className={styles.filterItem__icon}
-      >
-        <use xlinkHref={`#${icon}`} href={`#${icon}`} />
-      </svg>
+      <Icon icon={icon} className={styles.filterItem__icon} />
       {label}
     </li>
   )

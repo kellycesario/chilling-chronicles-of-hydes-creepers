@@ -1,3 +1,4 @@
+import { Icon } from '@/components/atoms/Icon'
 import Link from 'next/link'
 import styles from './styles.module.scss'
 
@@ -35,24 +36,13 @@ export const Button = ({
   return (
     <>
       {isButton ? (
-        <button
-          onClick={onClick}
-          className={combinedClassName}
-        >
-          {hasIcon && (
-            <svg width='32' height='32' viewBox='0 0 32 32'>
-              <use href={`#${icon}`} xlinkHref={`#${icon}`} />
-            </svg>
-          )}
+        <button onClick={onClick} className={combinedClassName}>
+          {hasIcon && <Icon icon={icon} />}
           {label}
         </button>
       ) : (
         <Link href={href || ''} target={target} className={combinedClassName}>
-          {hasIcon && (
-            <svg width='32' height='32' viewBox='0 0 32 32'>
-              <use href={`#${icon}`} xlinkHref={`#${icon}`} />
-            </svg>
-          )}
+          {hasIcon && <Icon icon={icon} />}
           {label}
         </Link>
       )}

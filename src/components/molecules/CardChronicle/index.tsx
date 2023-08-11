@@ -1,4 +1,5 @@
 import { Headings } from '@/components/atoms/Headings'
+import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'
 import { limitCharacters } from '@/utils/limitCharacters.js'
 import Link from 'next/link'
@@ -37,9 +38,7 @@ export const CardChronicle = ({
           <Headings align='left' children={title} color='white' level='3' />
           <Text align='left' children={sub} color='white' />
           <div className={styles.card__author}>
-            <svg width='32' height='32' viewBox='0 0 32 32' fill='white'>
-              <use xlinkHref='#ghost' href='#ghost' />
-            </svg>
+            <Icon icon='ghost' fill='#FDFFFF' />
             <Text align='left' children={author} color='white' />
           </div>
         </div>

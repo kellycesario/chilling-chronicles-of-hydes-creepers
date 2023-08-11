@@ -1,4 +1,5 @@
 import { Headings } from '@/components/atoms/Headings'
+import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'
 import Image from 'next/image'
 import styles from './styles.module.scss'
@@ -37,18 +38,14 @@ export const CardAuthor = ({
           className={styles.card__icon}
           aria-label='join me in discord'
         >
-          <svg width='32' height='32' viewBox='0 0 32 32'>
-            <use xlinkHref='#discord' href='#discord' />
-          </svg>
+          <Icon icon='discord' />
         </a>
         <a
           href={linkedin}
           className={styles.card__icon}
           aria-label='connect with me in linkedin'
         >
-          <svg width='32' height='32' viewBox='0 0 32 32'>
-            <use xlinkHref='#linkedin' href='#linkedin' />
-          </svg>
+          <Icon icon='linkedin' />
         </a>
       </div>
     </article>

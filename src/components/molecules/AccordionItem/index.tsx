@@ -1,5 +1,7 @@
+import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'
 import { useState } from 'react'
+
 import styles from './styles.module.scss'
 
 type AccordionItemProps = {
@@ -43,15 +45,11 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
           color={expanded ? 'purple' : 'black'}
           weight='600'
         />
-        <svg
-          width='32'
-          height='32'
-          viewBox='0 0 32 32'
+        <Icon
+          icon={icon}
           fill={fillColor}
           className={styles.accordionItem__icon}
-        >
-          <use xlinkHref={`#${icon}`} href={`#${icon}`} />
-        </svg>
+        />
       </div>
       {expanded && (
         <div className={styles.accordionItem__answer}>

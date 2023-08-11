@@ -1,3 +1,4 @@
+import { Icon } from '@/components/atoms/Icon'
 import { Tag } from '@/components/atoms/Tag'
 import { Text } from '@/components/atoms/Text'
 import quoteData from '@/data/quotes.json'
@@ -38,15 +39,11 @@ export const BannerQuote = ({ image }: BannerQuoteProps) => {
           onClick={handlePrevQuote}
           aria-label='Previous Quote'
         >
-          <svg width='32' height='32' viewBox='0 0 32 32'>
-            <use xlinkHref='#left' href='#left' />
-          </svg>
+          <Icon icon='left' />
         </button>
       </article>
       <article className={styles.quote__container}>
-        <svg width='32' height='32' viewBox='0 0 32 32'>
-          <use xlinkHref='#quote-02' href='#quote-02' />
-        </svg>
+        <Icon icon='quote-02' />
         <Text align='center' children={currentQuote.quote} color='black' />
         <Tag author={currentQuote.author} />
       </article>
@@ -56,9 +53,7 @@ export const BannerQuote = ({ image }: BannerQuoteProps) => {
           onClick={handleNextQuote}
           aria-label='Next Quote'
         >
-          <svg width='32' height='32' viewBox='0 0 32 32'>
-            <use xlinkHref='#right' href='#right' />
-          </svg>
+          <Icon icon='right' />
         </button>
       </article>
     </section>

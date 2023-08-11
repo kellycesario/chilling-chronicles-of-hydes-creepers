@@ -1,4 +1,5 @@
 import { Button } from '@/components/atoms/Button'
+import { Icon } from '@/components/atoms/Icon'
 import { LinkItem } from '@/components/atoms/LinkItem'
 import { Logo } from '@/components/ions/Logo'
 import navigation from '@/data/navigation.json'
@@ -49,9 +50,7 @@ export const Header = () => {
           aria-expanded={isMenuOpen}
           onClick={toggleMenu}
         >
-          <svg width='32' height='32' viewBox='0 0 32 32'>
-            <use xlinkHref={isMenuOpen ? '#close' : '#menu'} />
-          </svg>
+          <Icon icon={isMenuOpen ? 'close' : 'menu'} />
         </button>
       </nav>
       <Button

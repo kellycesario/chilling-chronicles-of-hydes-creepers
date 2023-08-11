@@ -1,3 +1,4 @@
+import { Icon } from '@/components/atoms/Icon'
 import styles from './styles.module.scss'
 
 type InputProps = {
@@ -23,9 +24,7 @@ export const Input = ({
         {label}
       </label>
       <div className={styles.input} aria-hidden='true'>
-        <svg width='32' height='32' viewBox='0 0 32 32' fill='#765BA8'>
-          <use xlinkHref={`#${icon}`} href={`#${icon}`} />
-        </svg>
+        <Icon icon={icon} fill='#765BA8' />
         {isTextarea ? (
           <textarea
             className={styles.input__field}
