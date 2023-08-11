@@ -10,7 +10,7 @@ type HeroProps = {
 export const Hero = ({ image }: HeroProps) => {
   return (
     <section className={styles.hero}>
-      <article>
+      <article className={styles.hero__headings}>
         <Headings
           align='left'
           children="Chilling Chronicles of Hyde's Creepers"
