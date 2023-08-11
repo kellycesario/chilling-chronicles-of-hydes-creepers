@@ -20,11 +20,6 @@ export default {
         disable: true,
       },
     },
-    hasIcon: {
-      table: {
-        disable: true,
-      },
-    },
     icon: {
       control: { type: 'select' },
       options: ['linkedin', 'twitter', 'discord'],
