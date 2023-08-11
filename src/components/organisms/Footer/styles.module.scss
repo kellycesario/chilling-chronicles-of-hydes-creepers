@@ -1,3 +1,5 @@
+@import '@/styles/index.scss';
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -6,6 +8,8 @@
   align-content: center;
   gap: 2rem;
   margin: 6.8rem 0;
+  background-color: $white;
+
 
   &__list {
     display: flex;

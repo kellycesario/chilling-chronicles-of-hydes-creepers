@@ -4,12 +4,21 @@
   display: flex;
   flex-direction: column;
   padding: 10.2rem 2.3rem 17.3rem;
+
   @include screen-size('desktop') {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2, auto);
     max-width: 144rem;
     margin: 0 auto;
+    padding-inline: 7rem;
+    gap: 1.7rem;
+  }
+
+  &__headings {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 
   &__container {
