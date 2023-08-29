@@ -5,8 +5,15 @@ export default {
   component: Contact,
   title: 'Organisms/Contact',
   tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
+  args: {
+    image: '/contact-bg.png',
+  },
+  argTypes: {
+    image: {
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => {
