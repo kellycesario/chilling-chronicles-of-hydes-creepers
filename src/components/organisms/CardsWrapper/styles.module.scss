@@ -1,0 +1,71 @@
+@import '@/styles/index.scss';
+
+.cards {
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 0 1.7rem;
+
+  @include screen-size('tablet') {
+    padding: 0 2.2rem;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: 4rem 0;
+  }
+
+  &__container {
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  &__inicialItems {
+    @include container-cards;
+
+    @include screen-size('tablet') {
+      margin-bottom: 1.8rem;
+    }
+
+    @include screen-size('desktop') {
+      grid-template-columns: minmax(74rem, min-content) minmax(
+          36rem,
+          min-content
+        );
+    }
+
+    @include screen-size('desktop-lg') {
+      grid-template-columns: minmax(86rem, min-content) minmax(
+          42rem,
+          min-content
+        );
+    }
+  }
+
+  &__additionalItems {
+    @include container-cards;
+
+    @include screen-size('desktop') {
+      grid-template-columns:
+        minmax(36rem, min-content) minmax(36rem, min-content)
+        minmax(36rem, min-content);
+    }
+
+    @include screen-size('desktop-lg') {
+      display: grid;
+      grid-template-columns:
+        minmax(42rem, min-content) minmax(42rem, min-content)
+        minmax(42rem, min-content);
+    }
+  }
+
+  &__interaction {
+    margin: 4rem 0;
+    max-width: 42rem;
+
+    @include screen-size('desktop') {
+      max-width: 53rem;
+    }
+  }
+}

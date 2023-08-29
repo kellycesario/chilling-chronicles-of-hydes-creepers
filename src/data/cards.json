@@ -1,0 +1,184 @@
+[
+    {
+      "id": 1,
+      "ariaLabel": "Review 1",
+      "author": "John Doe",
+      "image": "/merrin.webp",
+      "subtitle": "A bone-chilling thriller",
+      "title": "Whispers in the Dark",
+      "href": "/"
+    },
+    {
+      "id": 2,
+      "ariaLabel": "Review 2",
+      "author": "Jane Smith",
+      "image": "/merrin.webp",
+      "subtitle": "An unsettling masterpiece",
+      "title": "Shadows of the Unknown",
+      "href": "/"
+    },
+    {
+      "id": 3,
+      "ariaLabel": "Review 3",
+      "author": "Michael Johnson",
+      "image": "/merrin.webp",
+      "subtitle": "A journey into fear",
+      "title": "Eerie Echoes",
+      "href": "/"
+    },
+    {
+      "id": 4,
+      "ariaLabel": "Review 4",
+      "author": "Sarah Thompson",
+      "image": "/merrin.webp",
+
+      "subtitle": "A chilling mystery",
+      "title": "Frozen Fears",
+      "href": "/"
+    },
+    {
+      "id": 5,
+      "ariaLabel": "Review 5",
+      "author": "David Williams",
+      "image": "/merrin.webp",
+      "subtitle": "An otherworldly terror",
+      "title": "Cursed Crypt",
+      "href": "/"
+    },
+    {
+      "id": 6,
+      "ariaLabel": "Review 6",
+      "author": "Jessica Adams",
+      "image": "/merrin.webp",
+      "subtitle": "A haunting tale",
+      "title": "Spectral Whispers",
+      "href": "/"
+    },
+    {
+      "id": 7,
+      "ariaLabel": "Review 7",
+      "author": "Alex Turner",
+      "image": "/merrin.webp",
+      "subtitle": "A nightmarish adventure",
+      "title": "Midnight Menace",
+      "href": "/"
+    },
+    {
+      "id": 8,
+      "ariaLabel": "Review 8",
+      "author": "Rachel Green",
+      "image": "/merrin.webp",
+      "subtitle": "A descent into madness",
+      "title": "Haunting Minds",
+      "href": "/"
+    },
+    {
+      "id": 9,
+      "ariaLabel": "Review 9",
+      "author": "William Brown",
+      "image": "/merrin.webp",
+      "subtitle": "A terror from below",
+      "title": "Cavern of Fear",
+      "href": "/"
+    },
+    {
+      "id": 10,
+      "ariaLabel": "Review 10",
+      "author": "Olivia Martinez",
+      "image": "/merrin.webp",
+      "subtitle": "An ancient curse",
+      "title": "Whispering Curse",
+      "href": "/"
+    },
+    {
+      "id": 11,
+      "ariaLabel": "Review 11",
+      "author": "Daniel Jackson",
+      "image": "/merrin.webp",
+      "subtitle": "A sinister secret",
+      "title": "Sinister Whispers",
+      "href": "/"
+    },
+    {
+      "id": 12,
+      "ariaLabel": "Review 12",
+      "author": "Sophia White",
+      "image": "/merrin.webp",
+      "subtitle": "An unending nightmare",
+      "title": "Nightmare's Embrace",
+      "href": "/"
+    },
+    {
+      "id": 13,
+      "ariaLabel": "Review 13",
+      "author": "Ethan Johnson",
+      "image": "/merrin.webp",
+      "subtitle": "A cursed town",
+      "title": "Cursed Hollow",
+      "href": "/"
+    },
+    {
+      "id": 14,
+      "ariaLabel": "Review 14",
+      "author": "Ava Wilson",
+      "image": "/merrin.webp",
+      "subtitle": "A haunting melody",
+      "title": "Melody of Shadows",
+      "href": "/"
+    },
+    {
+      "id": 15,
+      "ariaLabel": "Review 15",
+      "author": "Liam Clark",
+      "image": "/merrin.webp",
+      "subtitle": "A legacy of terror",
+      "title": "Terror's Legacy",
+      "href": "/"
+    },
+    {
+      "id": 16,
+      "ariaLabel": "Review 16",
+      "author": "Mia Johnson",
+      "image": "/merrin.webp",
+      "subtitle": "A cursed artifact",
+      "title": "Cursed Relic",
+      "href": "/"
+    },
+    {
+      "id": 17,
+      "ariaLabel": "Review 17",
+      "author": "Noah Davis",
+      "image": "/merrin.webp",
+      "subtitle": "A forgotten evil",
+      "title": "Forgotten Fears",
+      "href": "/"
+    },
+    {
+      "id": 18,
+      "ariaLabel": "Review 18",
+      "author": "Emma Thompson",
+      "image": "/merrin.webp",
+      "subtitle": "An ancient darkness",
+      "title": "Ancient Shadows",
+      "href": "/"
+    },
+    {
+      "id": 19,
+      "ariaLabel": "Review 19",
+      "author": "Jackson Smith",
+      "image": "/merrin.webp",
+      "subtitle": "A cursed bloodline",
+      "title": "Cursed Blood",
+      "href": "/"
+    },
+    {
+      "id": 20,
+      "ariaLabel": "Review 20",
+      "author": "Emily Brown",
+      "image": "/merrin.webp",
+      "subtitle": "An atmospheric horror story",
+      "title": "Cursed Whispers",
+      "href": "/"
+    }
+  ]
+  

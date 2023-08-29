@@ -1,15 +1,22 @@
 import { Sprites } from '@/components/ions/Sprites'
-import { Contact } from './index'
+import { CardsWrapper } from './index'
 
 export default {
-  component: Contact,
-  title: 'Organisms/Contact',
+  component: CardsWrapper,
+  title: 'Organisms/Cards',
   tags: ['autodocs'],
-  args: {
-    image: '/contact-bg.png',
-  },
   argTypes: {
-    image: {
+    numCardsMobile: {
+      table: {
+        disable: true,
+      },
+    },
+    numCardsTablet: {
+      table: {
+        disable: true,
+      },
+    },
+    numCardsDesktop: {
       table: {
         disable: true,
       },

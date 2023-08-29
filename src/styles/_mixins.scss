@@ -61,3 +61,17 @@
 @mixin layout() {
   background: linear-gradient(180deg, #c4c2ff 0%, #e5e5e5 100%);
 }
+
+@mixin container-cards() {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  transition: all 0.8s ease-in-out;
+
+
+  @include screen-size('tablet') {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+}

@@ -1,28 +1,68 @@
-import { Input } from '@/components/molecules/Input'
-import styles from './styles.module.scss'
-
 import { Button } from '@/components/atoms/Button'
 import { Headings } from '@/components/atoms/Headings'
-import contact from '@/data/contact.json'
+import { Text } from '@/components/atoms/Text'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import styles from './styles.module.scss'
 
-export const Contact = () => {
+type ContactProps = {
+  image: string
+}
+
+export const Contact = ({ image }: ContactProps) => {
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  const background = {
+    backgroundImage: `url(${image})`,
+  }
+
+  const headingsColor = windowWidth < 744 ? 'white' : 'black'
+  const buttonLevel = windowWidth < 744 ? 'tertiary' : 'secondary'
+
   return (
-    <section className={styles.contact}>
-      <Headings align='center' children='Summon us' color='white' level='2' />
-      <form className={styles.contact__form}>
-        {contact.map((item, index) => (
-          <Input
-            key={index}
-            icon={item.icon}
-            id={item.id}
-            isTextarea={item.isTextarea}
-            label={item.label}
-            placeholder={item.placeholder}
-            type={item.type}
+      <section className={styles.contact}>
+        <article
+          style={windowWidth < 744 ? background : {}}
+          className={styles.contact__container}
+        >
+          <Headings
+            align='left'
+            children='Creepy reviews in your inbox'
+            color={headingsColor}
+            level='4'
           />
-        ))}
-        <Button label='Submit' level='tertiary' />
-      </form>
-    </section>
+          <Text
+            align='left'
+            children='Unleash your darkest questions or eerie curiosities by communing with our spectral agents'
+            color={headingsColor}
+          />
+          <Button
+            href='/summon-us'
+            isButton={false}
+            label='Summon us'
+            level={buttonLevel}
+            target='_blank'
+          />
+        </article>
+        <Image
+          src={'/contact-bg.png'}
+          alt={''}
+          width={500}
+          height={500}
+          className={styles.contact__image}
+        />
+      </section>
   )
 }

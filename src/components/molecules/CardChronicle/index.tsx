@@ -1,7 +1,7 @@
 import { Headings } from '@/components/atoms/Headings'
 import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'
-import { limitCharacters } from '@/utils/limitCharacters.js'
+import { limitCharacters } from '@/utils/limitCharacters.ts'
 import Link from 'next/link'
 import styles from './styles.module.scss'
 
@@ -10,7 +10,7 @@ type CardChronicleProps = {
   author: string
   href?: string
   image: string
-  size: string
+  size?: string
   subtitle: string
   title: string
 }
@@ -24,11 +24,15 @@ export const CardChronicle = ({
   subtitle,
   title,
 }: CardChronicleProps) => {
-  const classList = [styles[`card`], styles[`card--${size}`]]
+
+  const classList = [styles.card, styles[`card--${size}`]]
+
   const background = {
     backgroundImage: `url(${image})`,
   }
+
   const characterLimit = size === 'large' ? 60 : size === '' ? 30 : 33
+
   const sub = limitCharacters(subtitle, characterLimit)
 
   return (

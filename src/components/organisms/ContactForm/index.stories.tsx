@@ -1,19 +1,12 @@
 import { Sprites } from '@/components/ions/Sprites'
-import { Contact } from './index'
+import { ContactForm } from './index'
 
 export default {
-  component: Contact,
-  title: 'Organisms/Contact',
+  component: ContactForm,
+  title: 'Organisms/ContactForm',
   tags: ['autodocs'],
-  args: {
-    image: '/contact-bg.png',
-  },
-  argTypes: {
-    image: {
-      table: {
-        disable: true,
-      },
-    },
+  parameters: {
+    layout: 'fullscreen',
   },
   decorators: [
     (Story) => {
