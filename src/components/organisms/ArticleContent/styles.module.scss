@@ -1,0 +1,33 @@
+@import '@/styles/index.scss';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 4rem 1.7rem;
+
+  @include screen-size('tablet') {
+    padding: 4rem 2.2rem;
+  }
+
+  @include screen-size('desktop-lg') {
+    padding: 4rem 18rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include screen-size('tablet') {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
