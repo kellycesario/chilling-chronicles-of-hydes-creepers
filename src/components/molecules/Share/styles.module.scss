@@ -3,7 +3,8 @@
 .share {
   display: flex;
   flex-direction: column;
-  margin: 4rem;
+  max-width: 37.5rem;
+  margin: 0 auto;
 
   &__list {
     display: flex;
