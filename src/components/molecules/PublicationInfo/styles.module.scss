@@ -1,0 +1,10 @@
+@import '@/styles/index.scss';
+
+.info {
+  &__container {
+    display: flex;
+    gap: 1rem;
+    border: 0.1rem solid $dark-gray;
+    padding: 1rem;
+  }
+}
