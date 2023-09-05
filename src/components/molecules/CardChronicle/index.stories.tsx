@@ -9,14 +9,13 @@ export default {
     layout: 'centered',
   },
   args: {
-    ariaLabel: 'Card',
-    author: 'Daisy Jones',
+    reviewer: 'Daisy Jones',
     href: 'www.google.com.br',
-    image:
+    picture:
       'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_42/1792285/pumpkin-shortage-te-main-211022.jpg',
     size: '',
-    subtitle: 'This is a very nice subtitle for this article in question',
-    title: 'Article title',
+    description: 'This is a very nice subtitle for this article in question',
+    lead: 'Article title',
   },
   decorators: [
     (Story) => {
@@ -29,17 +28,12 @@ export default {
     },
   ],
   argTypes: {
-    ariaLabel: {
-      table: {
-        disable: true,
-      },
-    },
     href: {
       table: {
         disable: true,
       },
     },
-    image: {
+    picture: {
       table: {
         disable: true,
       },

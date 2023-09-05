@@ -6,44 +6,42 @@ import Link from 'next/link'
 import styles from './styles.module.scss'
 
 type CardChronicleProps = {
-  ariaLabel: string
-  author: string
+  reviewer: string
   href?: string
-  image: string
+  picture: string
   size?: string
-  subtitle: string
-  title: string
+  description: string
+  lead: string
 }
 
 export const CardChronicle = ({
-  ariaLabel,
-  author,
-  href,
-  image,
+  reviewer,
+  href, // slug?
+  picture,
   size,
-  subtitle,
-  title,
+  description,
+  lead,
 }: CardChronicleProps) => {
 
   const classList = [styles.card, styles[`card--${size}`]]
 
   const background = {
-    backgroundImage: `url(${image})`,
+    backgroundImage: `url(${picture})`,
   }
 
   const characterLimit = size === 'large' ? 60 : size === '' ? 30 : 33
 
-  const sub = limitCharacters(subtitle, characterLimit)
+  const sub = limitCharacters(description, characterLimit)
 
   return (
-    <Link href={href} aria-label={ariaLabel}>
+    <Link href={href} aria-label={`checkout the ${lead} chronicle`}>
       <article className={classList.join(' ')} style={background}>
         <div className={styles.card__container}>
-          <Headings align='left' children={title} color='white' level='3' />
+          <Headings align='left' children={lead} color='white' level='3' />
           <Text align='left' children={sub} color='white' />
           <div className={styles.card__author}>
             <Icon icon='ghost' fill='#FDFFFF' />
-            <Text align='left' children={author} color='white' />
+            <Text align='left' children={reviewer} color='white' />
           </div>
         </div>
       </article>

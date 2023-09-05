@@ -49,12 +49,11 @@ export const CardsWrapper = ({
           {cards.slice(0, 2).map((item, index) => (
             <CardChronicle
               key={item.id}
-              ariaLabel={item.ariaLabel}
-              author={item.author}
-              image={item.image}
+              reviewer={item.reviewer}
+              picture={item.picture}
               size={isDesktop && index === 0 ? 'large' : ''}
-              subtitle={item.subtitle}
-              title={item.title}
+              description={item.description}
+              lead={item.lead}
               href={item.href}
             />
           ))}
@@ -64,11 +63,10 @@ export const CardsWrapper = ({
           {cards.slice(2, numCards).map((item) => (
             <CardChronicle
               key={item.id}
-              ariaLabel={item.ariaLabel}
-              author={item.author}
-              image={item.image}
-              subtitle={item.subtitle}
-              title={item.title}
+              reviewer={item.reviewer}
+              picture={item.picture}
+              description={item.description}
+              lead={item.lead}
               href={item.href}
             />
           ))}
