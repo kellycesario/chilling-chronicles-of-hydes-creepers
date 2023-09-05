@@ -23,6 +23,7 @@
 
   &__inicialItems {
     @include container-cards;
+    margin-bottom: 4rem;
 
     @include screen-size('tablet') {
       margin-bottom: 1.8rem;
