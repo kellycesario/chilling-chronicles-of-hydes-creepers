@@ -1,3 +1,5 @@
+'use client'
+
 import { Headings } from '@/components/atoms/Headings'
 import { AccordionItem } from '@/components/molecules/AccordionItem'
 import accordionData from '@/data/accordion.json'

@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/atoms/Button'
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
@@ -54,7 +56,7 @@ export const CardsWrapper = ({
               size={isDesktop && index === 0 ? 'large' : ''}
               description={item.description}
               lead={item.lead}
-              href={item.href}
+              slug={item.slug}
             />
           ))}
         </article>
@@ -67,7 +69,7 @@ export const CardsWrapper = ({
               picture={item.picture}
               description={item.description}
               lead={item.lead}
-              href={item.href}
+              slug={item.slug}
             />
           ))}
         </article>

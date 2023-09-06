@@ -1,3 +1,5 @@
+'use client'
+
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
 import { AboutItem } from '@/components/molecules/AboutItem'

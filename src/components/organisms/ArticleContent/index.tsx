@@ -1,3 +1,5 @@
+'use client'
+
 import { Headings } from '@/components/atoms/Headings'
 import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'

@@ -1,7 +1,8 @@
+'use client'
+
 import { FilterItem } from '@/components/molecules/FilterItem'
 import { Select } from '@/components/molecules/Select'
 import { useEffect, useState } from 'react'
-
 
 export const Filter = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200)
