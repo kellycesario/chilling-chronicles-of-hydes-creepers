@@ -46,7 +46,7 @@ export const ArticleContent = ({
       <div className={styles.content__container}>
         <Link href='/chilling-blog' className={styles.content__link}>
           <Icon icon='arrow-left' fill='#765BA8' />
-          <Text align='left' children='Return to article page' />
+          <Text align='left' children='Return to Chilling Blog' />
         </Link>
 
         <PublicationInfo reviewer={reviewer} date={date} />
