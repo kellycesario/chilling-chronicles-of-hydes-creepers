@@ -1,4 +1,3 @@
-import { Button } from '@/components/atoms/Button'
 import { Icon } from '@/components/atoms/Icon'
 import { LinkItem } from '@/components/atoms/LinkItem'
 import { Logo } from '@/components/ions/Logo'
@@ -36,7 +35,6 @@ export const Header = () => {
             isMenuOpen ? styles.header__open : styles.header__closed
           }`}
           role='menu'
-          aria-hidden={!isMenuOpen}
           tabIndex={isMenuOpen ? 0 : -1}
         >
           {navigation.map((item, index) => (
@@ -53,14 +51,6 @@ export const Header = () => {
           <Icon icon={isMenuOpen ? 'close' : 'menu'} />
         </button>
       </nav>
-      <Button
-        href='/'
-        isButton={false}
-        label='contact'
-        level='secondary'
-        target='_blank'
-        className={styles.header__button}
-      />
     </header>
   )
 }
