@@ -1,5 +1,3 @@
-'use client'
-
 import { Sprites } from '@/components/ions/Sprites'
 import { Footer } from '@/components/organisms/Footer'
 import '@/styles/main.scss'
@@ -10,7 +8,11 @@ const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Chilling Chronicles of Hydes Creepers',
-  description: '',
+  description:
+    "Explore chilling and mysterious stories on 'Chilling Chronicles of Hydes Creepers' blog. Dive into suspenseful narratives, eerie encounters, and enigmatic events, delivering thrilling content for mystery enthusiasts",
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({
