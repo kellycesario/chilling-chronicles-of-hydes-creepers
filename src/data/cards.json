@@ -5,7 +5,7 @@
       "picture": "/merrin.webp",
       "description": "A bone-chilling thriller",
       "lead": "Whispers in the Dark",
-      "href": "/"
+      "slug": "/"
     },
     {
       "id": 2,
