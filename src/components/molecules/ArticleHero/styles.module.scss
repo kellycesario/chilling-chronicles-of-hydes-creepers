@@ -1,0 +1,25 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__picture {
+    max-width: 34rem;
+    height: 19.2rem;
+
+    @include screen-size('tablet') {
+      max-width: 69.8rem;
+      height: 33.5rem;
+    }
+
+    @include screen-size('desktop') {
+        max-width: 108rem;
+        height: 70.5rem;
+      }
+  }
+}

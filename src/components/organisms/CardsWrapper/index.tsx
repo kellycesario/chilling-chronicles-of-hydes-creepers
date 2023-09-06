@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/atoms/Button'
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
@@ -49,13 +51,12 @@ export const CardsWrapper = ({
           {cards.slice(0, 2).map((item, index) => (
             <CardChronicle
               key={item.id}
-              ariaLabel={item.ariaLabel}
-              author={item.author}
-              image={item.image}
+              reviewer={item.reviewer}
+              picture={item.picture}
               size={isDesktop && index === 0 ? 'large' : ''}
-              subtitle={item.subtitle}
-              title={item.title}
-              href={item.href}
+              description={item.description}
+              lead={item.lead}
+              slug={item.slug}
             />
           ))}
         </article>
@@ -64,12 +65,11 @@ export const CardsWrapper = ({
           {cards.slice(2, numCards).map((item) => (
             <CardChronicle
               key={item.id}
-              ariaLabel={item.ariaLabel}
-              author={item.author}
-              image={item.image}
-              subtitle={item.subtitle}
-              title={item.title}
-              href={item.href}
+              reviewer={item.reviewer}
+              picture={item.picture}
+              description={item.description}
+              lead={item.lead}
+              slug={item.slug}
             />
           ))}
         </article>

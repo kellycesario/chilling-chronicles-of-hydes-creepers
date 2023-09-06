@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 
 export const Logo = () => {
   return (
-    <Link href='/' >
+    <Link href='/' aria-label='homepage'>
       <svg
         width='128'
         height='27'
@@ -11,6 +11,7 @@ export const Logo = () => {
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
         className={styles.logo}
+        aria-hidden="true"
       >
         <path
           fillRule='evenodd'

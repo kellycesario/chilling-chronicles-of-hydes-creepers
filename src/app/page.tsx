@@ -1,5 +1,3 @@
-'use client'
-
 import { CardsWrapper } from '@/components/organisms/CardsWrapper'
 import { Contact } from '@/components/organisms/Contact'
 import { Hallmarks } from '@/components/organisms/Hallmarks'

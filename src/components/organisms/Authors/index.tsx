@@ -1,3 +1,5 @@
+'use client'
+
 import { Headings } from '@/components/atoms/Headings'
 import { CardAuthor } from '@/components/molecules/CardAuthor'
 import authors from '@/data/authors.json'

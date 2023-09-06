@@ -1,5 +1,3 @@
-@import '@/styles/index.scss';
-
 .text {
   @include text();
 
@@ -7,11 +5,5 @@
 
   @include align();
 
-  &--600 {
-    font-weight: 600;
-
-    &:hover {
-      color: $purple;
-    }
-  }
+  @include weight();
 }

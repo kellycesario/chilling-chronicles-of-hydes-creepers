@@ -1,3 +1,5 @@
+'use client'
+
 import { Header } from '@/components/molecules/Header'
 import { Hero } from '@/components/molecules/Hero'
 import styles from './styles.module.scss'

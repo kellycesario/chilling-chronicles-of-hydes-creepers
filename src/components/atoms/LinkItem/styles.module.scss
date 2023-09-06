@@ -1,6 +1,6 @@
-@import '@/styles/index.scss';
-
 .link {
+  display: flex;
+  justify-content: center;
   @include text;
   cursor: pointer;
   color: $black;

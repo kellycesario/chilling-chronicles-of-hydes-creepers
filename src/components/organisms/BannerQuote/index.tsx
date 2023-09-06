@@ -1,3 +1,5 @@
+'use client'
+
 import { Icon } from '@/components/atoms/Icon'
 import { Tag } from '@/components/atoms/Tag'
 import { Text } from '@/components/atoms/Text'
