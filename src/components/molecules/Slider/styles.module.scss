@@ -23,6 +23,11 @@
     font-size: 1.2rem;
     font-weight: 300;
 
+    &:hover {
+      color: $purple;
+      font-weight: 600;
+    }
+
     @include screen-size('tablet') {
       font-size: 1.7rem;
     }
