@@ -5,10 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  
   @include screen-size('desktop') {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     max-width: 144rem;
     margin: 0 auto;
     padding-inline: 7rem;
@@ -57,16 +55,6 @@
     }
     @include screen-size('desktop') {
       display: none;
-    }
-  }
-
-  &__button {
-    display: none;
-    @include screen-size('desktop') {
-      display: flex;
-      max-width: 18rem;
-      place-self: end;
-      margin-right: 4rem;
     }
   }
 }
