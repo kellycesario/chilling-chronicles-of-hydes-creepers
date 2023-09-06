@@ -43,7 +43,7 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
           align='left'
           children={question}
           color={expanded ? 'purple' : 'black'}
-          weight='600'
+          weight='600-hover'
         />
         <Icon
           icon={icon}
