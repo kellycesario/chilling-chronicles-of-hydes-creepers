@@ -7,7 +7,7 @@ import styles from './styles.module.scss'
 
 type CardChronicleProps = {
   reviewer: string
-  href?: string
+  slug?: string
   picture: string
   size?: string
   description: string
@@ -16,7 +16,7 @@ type CardChronicleProps = {
 
 export const CardChronicle = ({
   reviewer,
-  href, // slug?
+  slug,
   picture,
   size,
   description,
@@ -34,7 +34,7 @@ export const CardChronicle = ({
   const sub = limitCharacters(description, characterLimit)
 
   return (
-    <Link href={href} aria-label={`checkout the ${lead} chronicle`}>
+    <Link href={`/chilling-blog/${slug}`} aria-label={`checkout the ${lead} chronicle`}>
       <article className={classList.join(' ')} style={background}>
         <div className={styles.card__container}>
           <Headings align='left' children={lead} color='white' level='3' />
