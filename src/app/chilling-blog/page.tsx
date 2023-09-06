@@ -1,4 +1,3 @@
-'use client'
 import { BannerQuote } from '@/components/organisms/BannerQuote'
 import { Contact } from '@/components/organisms/Contact'
 import { MainHeader } from '@/components/organisms/MainHeader'

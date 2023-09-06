@@ -1,5 +1,3 @@
-'use client'
-
 import { AboutUs } from '@/components/organisms/AboutUs'
 import { Authors } from '@/components/organisms/Authors'
 import { Hallmarks } from '@/components/organisms/Hallmarks'

@@ -1,5 +1,3 @@
-'use client'
-
 import { Accordion } from '@/components/organisms/Accordion'
 import { ArticleContent } from '@/components/organisms/ArticleContent'
 
