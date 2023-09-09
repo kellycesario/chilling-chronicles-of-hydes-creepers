@@ -8,13 +8,29 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     {
-      name: '@storybook/addon-styling',
+      name: 'storybook/addon-styling-webpack',
       options: {
-        sass: {
-          implementation: require('sass'),
-        },
+        rules: [
+          {
+            test: /\.scss$/,
+            use: [
+              'style-loader',
+              'css-loader',
+              {
+                loader: 'sass-loader',
+                options: {
+                  implementation: require.resolve('sass'),
+                  sassOptions: {
+                    includePaths: ['node_modules'],
+                  },
+                },
+              },
+            ],
+          },
+        ],
       },
     },
+    '@storybook/addon-mdx-gfm'
   ],
   framework: {
     name: '@storybook/nextjs',
