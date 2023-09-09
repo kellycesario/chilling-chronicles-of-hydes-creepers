@@ -17,5 +17,5 @@ We present a haunting collection of spine-tingling narratives and ghostly insigh
 - React
 - Storybook
 - Hotjar
-- Contentful:
+- Contentful
 - PWA (Progressive Web App)
