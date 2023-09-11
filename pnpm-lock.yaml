@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@contentful/rich-text-plain-text-renderer':
+    specifier: ^16.0.6
+    version: 16.0.6
+  '@contentful/rich-text-types':
+    specifier: ^16.2.1
+    version: 16.2.1
   '@types/node':
     specifier: 20.4.5
     version: 20.4.5
@@ -1518,6 +1524,13 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@contentful/rich-text-plain-text-renderer@16.0.6:
+    resolution: {integrity: sha512-CvsU5T8zqwHh2bgzmHKnxKjcxpCMeTkHAklzblUTLPCkHVyJnbBqAZ6h9tpGbyFY3+WIDI6co22+oJIaHUDxuA==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      '@contentful/rich-text-types': 16.2.1
+    dev: false
 
   /@contentful/rich-text-types@16.2.1:
     resolution: {integrity: sha512-fBxqYcyG3Nw33DhifuE7Ndw3xlrWlOMjwsOvhLmVP4LO475Qyy9ioRChtEt6DPUdH2SFpobvM0qqC/fVe0MNDA==}
@@ -8162,7 +8175,7 @@ packages:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.6.1
+      tslib: 2.6.2
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.11
