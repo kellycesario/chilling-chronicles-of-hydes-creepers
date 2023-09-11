@@ -15,7 +15,7 @@ export interface TypeChronicleFields {
     quote: EntryFieldTypes.Symbol;
     date: EntryFieldTypes.Date;
     alt: EntryFieldTypes.Symbol;
-    category?: EntryFieldTypes.EntryLink<EntrySkeletonType>;
+    additionalInformation: EntryFieldTypes.EntryLink<EntrySkeletonType>;
 }
 
 export type TypeChronicleSkeleton = EntrySkeletonType<TypeChronicleFields, "chronicle">;
