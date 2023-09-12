@@ -2,7 +2,7 @@
 
 import { Headings } from '@/components/atoms/Headings'
 import { AccordionItem } from '@/components/molecules/AccordionItem'
-import accordionData from '@/data/accordion.json'
+import accordionData from '@/utils/accordionData'
 import styles from './styles.module.scss'
 
 export const Accordion = () => {
@@ -15,12 +15,8 @@ export const Accordion = () => {
         level='3'
       />
       <div className={styles.accordion__items}>
-        {accordionData.map((item, index) => (
-          <AccordionItem
-            key={index}
-            question={item.question}
-            answer={item.answer}
-          />
+        {Object.entries(accordionData[0]).map(([key, value], index) => (
+          <AccordionItem key={index} title={value} content={key} />
         ))}
       </div>
     </section>

@@ -5,11 +5,11 @@ import { useState } from 'react'
 import styles from './styles.module.scss'
 
 type AccordionItemProps = {
-  question: string
-  answer: string
+  title: string
+  content: string
 }
 
-export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
+export const AccordionItem = ({ title, content }: AccordionItemProps) => {
   const [expanded, setExpanded] = useState(false)
 
   const handleToggleAccordion = () => {
@@ -17,6 +17,7 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
   }
 
   const icon = expanded ? 'minus' : 'plus'
+  
   const fillColor = expanded ? '#765BA8' : '#000706'
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -41,7 +42,7 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
       >
         <Text
           align='left'
-          children={question}
+          children={title}
           color={expanded ? 'purple' : 'black'}
           weight='600-hover'
         />
@@ -53,7 +54,7 @@ export const AccordionItem = ({ question, answer }: AccordionItemProps) => {
       </div>
       {expanded && (
         <div className={styles.accordionItem__answer}>
-          <Text align='left' children={answer} color='black' />
+          <Text align='left' children={content} color='black' />
         </div>
       )}
     </article>
