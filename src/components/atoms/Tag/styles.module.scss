@@ -16,5 +16,10 @@
     @include screen-size('desktop') {
       font-size: 2.4rem;
     }
+
+    &::selection {
+      background-color: $purple;
+      color: $white;
+    }
   }
 }

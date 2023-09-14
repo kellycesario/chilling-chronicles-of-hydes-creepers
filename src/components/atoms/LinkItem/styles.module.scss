@@ -20,4 +20,9 @@
       fill: $purple;
     }
   }
+
+  &::selection {
+    background-color: $purple;
+    color: $white;
+  }
 }
