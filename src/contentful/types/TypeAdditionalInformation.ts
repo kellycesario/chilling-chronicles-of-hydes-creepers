@@ -1,6 +1,6 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 
-export interface TypeBookExtrasFields {
+export interface TypeAdditionalInformationFields {
     officialSummary: EntryFieldTypes.RichText;
     sinisterBookInsights: EntryFieldTypes.RichText;
     notesOnTranslation: EntryFieldTypes.RichText;
@@ -9,5 +9,5 @@ export interface TypeBookExtrasFields {
     isbn: EntryFieldTypes.Symbol;
 }
 
-export type TypeBookExtrasSkeleton = EntrySkeletonType<TypeBookExtrasFields, "bookExtras">;
-export type TypeBookExtras<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeBookExtrasSkeleton, Modifiers, Locales>;
+export type TypeAdditionalInformationSkeleton = EntrySkeletonType<TypeAdditionalInformationFields, "additionalInformation">;
+export type TypeAdditionalInformation<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeAdditionalInformationSkeleton, Modifiers, Locales>;

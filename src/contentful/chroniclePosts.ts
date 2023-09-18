@@ -1,33 +1,39 @@
-import { Document } from '@contentful/rich-text-types'
-import { Asset, ChainModifiers, Entry, UnresolvedLink } from 'contentful'
-import contentfulClient from './contentfulClient'
-import { TypeChronicleSkeleton } from './types'
+import { Document } from '@contentful/rich-text-types';
+import { Asset, ChainModifiers, Entry, UnresolvedLink } from 'contentful';
+import contentfulClient from './contentfulClient';
+import { TypeChronicleSkeleton } from './types';
+import { AdditionalInformation, fetchExtra } from './additionalInformationPosts';
 
-type ChronicleEntry = Entry<TypeChronicleSkeleton, undefined, string>
-
+type ChronicleEntry = Entry<TypeChronicleSkeleton, undefined, string>;
 export interface Chronicle {
-  lead: string
-  subtitle: string
-  reviewer: string
-  picture: Asset<ChainModifiers, string> | UnresolvedLink<'Asset'>
-  firstParagraph: Document | string
-  secondParagraph: Document | string
-  thirdParagraph: Document | string
-  fourthParagraph: Document | string
-  slug: string
-  description: string
-  emphasis: string
-  quote: string
-  date: string
-  alt: string
+  lead: string;
+  subtitle: string;
+  reviewer: string;
+  picture: Asset<ChainModifiers, string> | UnresolvedLink<'Asset'>;
+  firstParagraph: Document | string;
+  secondParagraph: Document | string;
+  thirdParagraph: Document | string;
+  fourthParagraph: Document | string;
+  slug: string;
+  description: string;
+  emphasis: string;
+  quote: string;
+  date: string;
+  alt: string;
+  additionalInformation: AdditionalInformation | null;
 }
 
-export function parseContentfulBlogPost(
+export async function parseContentfulBlogPost(
   chronicleEntry?: ChronicleEntry
-): Chronicle | null {
+): Promise<Chronicle | null> {
   if (!chronicleEntry) {
-    return null
+    return null;
   }
+
+  const additionalInfo = await fetchExtra({
+    isbn: chronicleEntry.fields.additionalInformation.sys.id || '',
+    preview: false,
+  });
 
   return {
     lead: chronicleEntry.fields.lead || '',
@@ -44,7 +50,10 @@ export function parseContentfulBlogPost(
     quote: chronicleEntry.fields.quote || '',
     date: chronicleEntry.fields.date || '',
     alt: chronicleEntry.fields.alt || '',
-  }
+    additionalInformation: {
+      ...additionalInfo,
+    },
+  };
 }
 
 interface FetchChroniclesOptions {
@@ -63,7 +72,7 @@ export async function fetchChronicles({
   })
 
   return chronicleResult.items.map(
-    (chronicleEntry) => parseContentfulBlogPost(chronicleEntry) as Chronicle
+    (chronicleEntry) => parseContentfulBlogPost(chronicleEntry) as unknown as Chronicle
   )
 }
 

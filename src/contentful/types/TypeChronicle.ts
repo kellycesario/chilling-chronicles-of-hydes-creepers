@@ -2,20 +2,20 @@ import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleC
 
 export interface TypeChronicleFields {
     lead: EntryFieldTypes.Symbol;
-    subtitle: EntryFieldTypes.Symbol;
-    reviewer: EntryFieldTypes.Symbol;
     picture: EntryFieldTypes.AssetLink;
+    alt: EntryFieldTypes.Symbol;
+    description: EntryFieldTypes.Symbol;
     firstParagraph: EntryFieldTypes.RichText;
+    subtitle: EntryFieldTypes.Symbol;
     secondParagraph: EntryFieldTypes.RichText;
     thirdParagraph: EntryFieldTypes.RichText;
-    fourthParagraph: EntryFieldTypes.RichText;
-    slug: EntryFieldTypes.Symbol;
-    description: EntryFieldTypes.Symbol;
-    emphasis: EntryFieldTypes.Symbol;
     quote: EntryFieldTypes.Symbol;
+    emphasis: EntryFieldTypes.Symbol;
+    fourthParagraph: EntryFieldTypes.RichText;
+    reviewer: EntryFieldTypes.Symbol;
     date: EntryFieldTypes.Date;
-    alt: EntryFieldTypes.Symbol;
     additionalInformation: EntryFieldTypes.EntryLink<EntrySkeletonType>;
+    slug: EntryFieldTypes.Symbol;
 }
 
 export type TypeChronicleSkeleton = EntrySkeletonType<TypeChronicleFields, "chronicle">;
