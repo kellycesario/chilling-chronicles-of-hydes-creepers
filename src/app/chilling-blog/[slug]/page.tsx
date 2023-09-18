@@ -41,7 +41,7 @@ export async function generateMetadata(
   }
 }
 
-async function Article({ params }: ChronicleProps) {
+async function Article({ params }: ChronicleProps, additionalInformation: any) {
   const chronicle = await fetchChronicle({
     slug: params.slug,
     preview: draftMode().isEnabled,
@@ -92,7 +92,7 @@ async function Article({ params }: ChronicleProps) {
             : documentToPlainTextString(chronicle.fourthParagraph)
         }
       />
-      <Accordion />
+      <Accordion additionalInformation={additionalInformation} />
     </section>
   )
 }
