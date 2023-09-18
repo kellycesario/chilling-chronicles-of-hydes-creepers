@@ -1,3 +1,5 @@
+'use client'
+
 import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'
 import { useState } from 'react'
@@ -17,7 +19,7 @@ export const AccordionItem = ({ title, content }: AccordionItemProps) => {
   }
 
   const icon = expanded ? 'minus' : 'plus'
-  
+
   const fillColor = expanded ? '#765BA8' : '#000706'
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
