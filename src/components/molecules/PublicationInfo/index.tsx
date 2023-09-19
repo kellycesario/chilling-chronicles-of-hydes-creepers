@@ -1,4 +1,5 @@
 import { Text } from '@/components/atoms/Text'
+import { formatDate } from '@/utils/formatDate'
 import styles from './styles.module.scss'
 
 type PublicationInfoProps = {
@@ -7,6 +8,8 @@ type PublicationInfoProps = {
 }
 
 export const PublicationInfo = ({ reviewer, date }: PublicationInfoProps) => {
+  const formattedDate = formatDate(date)
+
   return (
     <article className={styles.info}>
       <div className={styles.info__container}>
@@ -15,7 +18,7 @@ export const PublicationInfo = ({ reviewer, date }: PublicationInfoProps) => {
       </div>
       <div className={styles.info__container}>
         <Text align='left' weight='600' children='Date of publication:' />
-        <Text align='left' children={date} />
+        <Text align='left' children={formattedDate} />
       </div>
     </article>
   )

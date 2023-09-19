@@ -1,4 +1,8 @@
 .text {
+  &::selection {
+    background-color: $purple;
+    color: $white;
+  }
   @include text();
 
   @include colors();

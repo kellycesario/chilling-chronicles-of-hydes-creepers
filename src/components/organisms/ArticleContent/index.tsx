@@ -44,31 +44,33 @@ export const ArticleContent = ({
   fourthParagraph,
 }: ArticleContentProps) => {
   return (
-    <section className={styles.content}>
-      <div className={styles.content__container}>
-        <Link href='/chilling-blog' className={styles.content__link}>
-          <Icon icon='arrow-left' fill='#765BA8' />
-          <Text align='left' children='Return to Chilling Blog' />
-        </Link>
+    <>
+      <section className={styles.content}>
+        <div className={styles.content__container}>
+          <Link href='/chilling-blog' className={styles.content__link}>
+            <Icon icon='arrow-left' fill='#765BA8' />
+            <Text align='left' children='Return to Chilling Blog' />
+          </Link>
 
-        <PublicationInfo reviewer={reviewer} date={date} />
-      </div>
+          <PublicationInfo reviewer={reviewer} date={date} />
+        </div>
 
-      <ArticleHero
-        alt={alt}
-        lead={lead}
-        picture={picture}
-        description={description}
-      />
+        <ArticleHero
+          alt={alt}
+          lead={lead}
+          picture={picture}
+          description={description}
+        />
 
-      <Share />
+        <Share />
 
-      <Text align='left' children={firstParagraph} />
-      <Headings align='center' children={subtitle} color='purple' level='2' />
-      <Text align='left' children={secondParagraph} />
-      <Text align='left' children={thirdParagraph} />
-      <ArticleQuote emphasis={emphasis} quote={quote} />
-      <Text align='left' children={fourthParagraph} />
-    </section>
+        <Text align='left' children={firstParagraph} />
+        <Headings align='center' children={subtitle} color='purple' level='2' />
+        <Text align='left' children={secondParagraph} />
+        <Text align='left' children={thirdParagraph} />
+        <ArticleQuote emphasis={emphasis} quote={quote} />
+        <Text align='left' children={fourthParagraph} />
+      </section>
+    </>
   )
 }

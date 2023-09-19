@@ -17,6 +17,11 @@
     @include text();
     text-transform: capitalize;
     color: $white;
+
+    &::selection {
+      background-color: $purple;
+      color: $white;
+    }
   }
 
   &__field {

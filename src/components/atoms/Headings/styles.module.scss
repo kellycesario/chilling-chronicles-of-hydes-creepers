@@ -61,6 +61,11 @@
     }
   }
 
+  &::selection {
+    background-color: $purple;
+    color: $white;
+  }
+
   @include colors();
 
   @include align();

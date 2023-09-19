@@ -1,7 +1,7 @@
 import { BannerQuote } from '@/components/organisms/BannerQuote'
+import { CardsWrapper } from '@/components/organisms/CardsWrapper'
 import { Contact } from '@/components/organisms/Contact'
 import { MainHeader } from '@/components/organisms/MainHeader'
-import { CardsWrapper } from '@/components/organisms/CardsWrapper'
 
 export default function Blog() {
   return (

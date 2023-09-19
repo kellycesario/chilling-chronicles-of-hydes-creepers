@@ -13,6 +13,9 @@
       ],
       "@/data/*": [
         "data/*"
+      ],
+      "@/contentful/*" : [
+        "contentful/*"
       ]
     },
     "lib": [
