@@ -7,8 +7,6 @@ import { ArticleContent } from '@/components/organisms/ArticleContent'
 
 import { fetchChronicle, fetchChronicles } from '@/contentful/chroniclePosts'
 
-import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-
 interface ChronicleParams {
   slug: string
 }
@@ -41,7 +39,7 @@ export async function generateMetadata(
   }
 }
 
-async function Article({ params }: ChronicleProps, additionalInformation: any) {
+async function Article({ params }: ChronicleProps) {
   const chronicle = await fetchChronicle({
     slug: params.slug,
     preview: draftMode().isEnabled,
@@ -71,28 +69,21 @@ async function Article({ params }: ChronicleProps, additionalInformation: any) {
         description={chronicle.description}
         emphasis={chronicle.emphasis}
         quote={chronicle.quote}
-        firstParagraph={
-          typeof chronicle.firstParagraph === 'string'
-            ? chronicle.firstParagraph
-            : documentToPlainTextString(chronicle.firstParagraph)
-        }
-        secondParagraph={
-          typeof chronicle.secondParagraph === 'string'
-            ? chronicle.secondParagraph
-            : documentToPlainTextString(chronicle.secondParagraph)
-        }
-        thirdParagraph={
-          typeof chronicle.thirdParagraph === 'string'
-            ? chronicle.thirdParagraph
-            : documentToPlainTextString(chronicle.thirdParagraph)
-        }
-        fourthParagraph={
-          typeof chronicle.fourthParagraph === 'string'
-            ? chronicle.fourthParagraph
-            : documentToPlainTextString(chronicle.fourthParagraph)
-        }
+        firstParagraph={chronicle.firstParagraph}
+        secondParagraph={chronicle.secondParagraph}
+        thirdParagraph={chronicle.thirdParagraph}
+        fourthParagraph={chronicle.fourthParagraph}
       />
-      <Accordion additionalInformation={additionalInformation} />
+      <Accordion
+        officialSummary={chronicle.additionalInformation.officialSummary}
+        sinisterBookInsights={
+          chronicle.additionalInformation.sinisterBookInsights
+        }
+        notesOnTranslation={chronicle.additionalInformation.notesOnTranslation}
+        publicationDate={chronicle.additionalInformation.publicationDate}
+        pages={chronicle.additionalInformation.pages}
+        isbn={chronicle.additionalInformation.isbn}
+      />
     </section>
   )
 }
