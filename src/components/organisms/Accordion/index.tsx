@@ -1,22 +1,15 @@
 import { Headings } from '@/components/atoms/Headings'
 import { AccordionItem } from '@/components/molecules/AccordionItem'
-import { fetchExtra } from '@/contentful/additionalInformationPosts'
-import { draftMode } from 'next/headers'
 import styles from './styles.module.scss'
 
-export const Accordion = async ({ additionalInformation }) => {
-  console.log('additionalInformation:', additionalInformation)
-
-  additionalInformation = await fetchExtra({
-    isbn: additionalInformation?.isbn,
-    preview: draftMode().isEnabled,
-  })
-
-  if (!additionalInformation) {
-    console.error('Additional information is null or undefined.')
-    return null
-  }
-
+export const Accordion = async ({
+  officialSummary,
+  sinisterBookInsights,
+  notesOnTranslation,
+  publicationDate,
+  pages,
+  isbn,
+}) => {
   const accordionTitle = [
     'Official summary',
     'Sinister book insights',
@@ -27,12 +20,12 @@ export const Accordion = async ({ additionalInformation }) => {
   ]
 
   const accordionProps = [
-    additionalInformation?.officialSummary || '',
-    additionalInformation?.sinisterBookInsights || '',
-    additionalInformation?.notesOnTranslation || '',
-    additionalInformation?.publicationDate || '',
-    additionalInformation?.pages?.toString() || '',
-    additionalInformation?.isbn || '',
+    officialSummary,
+    sinisterBookInsights,
+    notesOnTranslation,
+    publicationDate,
+    pages?.toString(),
+    isbn,
   ]
 
   return (
