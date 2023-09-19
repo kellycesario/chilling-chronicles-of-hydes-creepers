@@ -1,5 +1,5 @@
 import { Text } from '@/components/atoms/Text'
-import { format } from 'date-fns'
+import { formatDate } from '@/utils/formatDate'
 import styles from './styles.module.scss'
 
 type PublicationInfoProps = {
@@ -8,8 +8,7 @@ type PublicationInfoProps = {
 }
 
 export const PublicationInfo = ({ reviewer, date }: PublicationInfoProps) => {
-  const parsedDate = new Date(date)
-  const formattedDate = format(parsedDate, 'MMMM d, yyyy')
+  const formattedDate = formatDate(date)
 
   return (
     <article className={styles.info}>
