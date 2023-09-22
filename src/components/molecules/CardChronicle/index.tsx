@@ -1,15 +1,21 @@
 import { Headings } from '@/components/atoms/Headings'
 import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'
+import { getProcessedPicture } from '@/utils/formatImage'
 import { limitCharacters } from '@/utils/limitCharacters.ts'
-import { Asset, ChainModifiers, UnresolvedLink } from 'contentful'
+import { Asset, ChainModifiers } from 'contentful'
 import Link from 'next/link'
 import styles from './styles.module.scss'
+
+type Picture =
+  | string
+  | Asset<ChainModifiers, string>
+  | (() => Asset<ChainModifiers, string>)
 
 type CardChronicleProps = {
   reviewer: string
   slug?: string
-  picture: Asset<ChainModifiers, string> | UnresolvedLink<'Asset'>
+  picture: Picture
   size?: string
   description: string
   lead: string
@@ -25,8 +31,11 @@ export const CardChronicle = ({
 }: CardChronicleProps) => {
   const classList = [styles.card, styles[`card--${size}`]]
 
+  const processedPicture =
+    typeof picture === 'function' ? getProcessedPicture(picture) : picture
+
   const background = {
-    backgroundImage: `url(${picture})`,
+    backgroundImage: `url(${processedPicture})`,
   }
 
   const characterLimit = size === 'large' ? 60 : size === '' ? 30 : 33

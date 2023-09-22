@@ -5,6 +5,7 @@ import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
 import { CardChronicle } from '@/components/molecules/CardChronicle'
 import { Chronicle } from '@/contentful/chroniclePosts'
+import { getProcessedPicture } from '@/utils/formatImage'
 import { useMediaQuery } from 'react-responsive'
 import styles from './styles.module.scss'
 
@@ -54,35 +55,37 @@ export const CardsWrapper = ({
       <div className={styles.cards__container}>
         <article className={styles.cards__initialItems}>
           {Array.isArray(chronicle) &&
-            chronicle
-              .slice(0, 2)
-              .map((item, index) => (
+            chronicle.slice(0, 2).map((item, index) => {
+              const processedPicture = getProcessedPicture(item.picture)
+              return (
                 <CardChronicle
                   key={index}
                   reviewer={item.reviewer}
-                  picture={item.picture}
-                  size={(isDesktop && index === 0) ? 'large' : ''}
+                  picture={processedPicture}
+                  size={isDesktop && index === 0 ? 'large' : ''}
                   description={item.description}
                   lead={item.lead}
                   slug={item.slug}
                 />
-              ))}
+              )
+            })}
         </article>
 
         <article className={styles.cards__additionalItems}>
           {Array.isArray(chronicle) &&
-            chronicle
-              .slice(2, numCards)
-              .map((item, index) => (
+            chronicle.slice(2, numCards).map((item, index) => {
+              const processedPicture = getProcessedPicture(item.picture)
+              return (
                 <CardChronicle
                   key={index}
                   reviewer={item.reviewer}
-                  picture={item.picture}
+                  picture={processedPicture}
                   description={item.description}
                   lead={item.lead}
                   slug={item.slug}
                 />
-              ))}
+              )
+            })}
         </article>
 
         <article className={styles.cards__interaction}>
