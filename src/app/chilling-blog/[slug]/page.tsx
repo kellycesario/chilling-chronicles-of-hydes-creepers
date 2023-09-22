@@ -1,11 +1,9 @@
+import { Accordion } from '@/components/organisms/Accordion'
+import { ArticleContent } from '@/components/organisms/ArticleContent'
+import { fetchChronicle, fetchChronicles } from '@/contentful/chroniclePosts'
 import { Metadata, ResolvingMetadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
-
-import { Accordion } from '@/components/organisms/Accordion'
-import { ArticleContent } from '@/components/organisms/ArticleContent'
-
-import { fetchChronicle, fetchChronicles } from '@/contentful/chroniclePosts'
 
 interface ChronicleParams {
   slug: string
