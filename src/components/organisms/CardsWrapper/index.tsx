@@ -4,7 +4,7 @@ import { Button } from '@/components/atoms/Button'
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
 import { CardChronicle } from '@/components/molecules/CardChronicle'
-import cards from '@/data/cards.json'
+import { Chronicle } from '@/contentful/chroniclePosts'
 import { useMediaQuery } from 'react-responsive'
 import styles from './styles.module.scss'
 
@@ -13,6 +13,10 @@ type CardsWrapperProps = {
   numCardsTablet: number
   numCardsDesktop: number
   showButton: boolean
+  chronicle?: Pick<
+    Chronicle,
+    'lead' | 'reviewer' | 'picture' | 'description' | 'slug'
+  >[]
 }
 
 export const CardsWrapper = ({
@@ -20,6 +24,7 @@ export const CardsWrapper = ({
   numCardsTablet,
   numCardsDesktop,
   showButton,
+  chronicle,
 }: CardsWrapperProps) => {
   const isMobile = useMediaQuery({ maxWidth: 743 })
   const isTablet = useMediaQuery({ maxWidth: 1199 })
@@ -47,31 +52,37 @@ export const CardsWrapper = ({
         />
       </article>
       <div className={styles.cards__container}>
-        <article className={styles.cards__inicialItems}>
-          {cards.slice(0, 2).map((item, index) => (
-            <CardChronicle
-              key={item.id}
-              reviewer={item.reviewer}
-              picture={item.picture}
-              size={isDesktop && index === 0 ? 'large' : ''}
-              description={item.description}
-              lead={item.lead}
-              slug={item.slug}
-            />
-          ))}
+        <article className={styles.cards__initialItems}>
+          {Array.isArray(chronicle) &&
+            chronicle
+              .slice(0, 2)
+              .map((item, index) => (
+                <CardChronicle
+                  key={index}
+                  reviewer={item.reviewer}
+                  picture={item.picture}
+                  size={(isDesktop && index === 0) ? 'large' : ''}
+                  description={item.description}
+                  lead={item.lead}
+                  slug={item.slug}
+                />
+              ))}
         </article>
 
         <article className={styles.cards__additionalItems}>
-          {cards.slice(2, numCards).map((item) => (
-            <CardChronicle
-              key={item.id}
-              reviewer={item.reviewer}
-              picture={item.picture}
-              description={item.description}
-              lead={item.lead}
-              slug={item.slug}
-            />
-          ))}
+          {Array.isArray(chronicle) &&
+            chronicle
+              .slice(2, numCards)
+              .map((item, index) => (
+                <CardChronicle
+                  key={index}
+                  reviewer={item.reviewer}
+                  picture={item.picture}
+                  description={item.description}
+                  lead={item.lead}
+                  slug={item.slug}
+                />
+              ))}
         </article>
 
         <article className={styles.cards__interaction}>

@@ -2,13 +2,14 @@ import { Headings } from '@/components/atoms/Headings'
 import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'
 import { limitCharacters } from '@/utils/limitCharacters.ts'
+import { Asset, ChainModifiers, UnresolvedLink } from 'contentful'
 import Link from 'next/link'
 import styles from './styles.module.scss'
 
 type CardChronicleProps = {
   reviewer: string
   slug?: string
-  picture: string
+  picture: Asset<ChainModifiers, string> | UnresolvedLink<'Asset'>
   size?: string
   description: string
   lead: string
@@ -22,7 +23,6 @@ export const CardChronicle = ({
   description,
   lead,
 }: CardChronicleProps) => {
-
   const classList = [styles.card, styles[`card--${size}`]]
 
   const background = {
@@ -31,10 +31,13 @@ export const CardChronicle = ({
 
   const characterLimit = size === 'large' ? 60 : size === '' ? 30 : 33
 
-  const sub = limitCharacters(description, characterLimit)
+  const sub = description ? limitCharacters(description, characterLimit) : ''
 
   return (
-    <Link href={`/chilling-blog/${slug}`} aria-label={`checkout the ${lead} chronicle`}>
+    <Link
+      href={`/chilling-blog/${slug}`}
+      aria-label={`checkout the ${lead} chronicle`}
+    >
       <article className={classList.join(' ')} style={background}>
         <div className={styles.card__container}>
           <Headings align='left' children={lead} color='white' level='3' />
