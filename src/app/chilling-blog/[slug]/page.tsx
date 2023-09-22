@@ -1,6 +1,7 @@
 import { Accordion } from '@/components/organisms/Accordion'
 import { ArticleContent } from '@/components/organisms/ArticleContent'
 import { fetchChronicle, fetchChronicles } from '@/contentful/chroniclePosts'
+import { getProcessedPicture } from '@/utils/formatImage'
 import { Metadata, ResolvingMetadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
@@ -47,13 +48,8 @@ async function Article({ params }: ChronicleProps) {
     return notFound()
   }
 
-  let imageUrl: string | undefined = ''
+  const picture: string | undefined = getProcessedPicture(chronicle.picture);
 
-  if (chronicle.picture && 'fields' in chronicle.picture) {
-    imageUrl = `https:${chronicle.picture.fields.file.url}`
-  } else if (typeof chronicle.picture === 'string') {
-    imageUrl = chronicle.picture
-  }
 
   return (
     <section>
@@ -62,7 +58,7 @@ async function Article({ params }: ChronicleProps) {
         date={chronicle.date}
         alt={chronicle.alt}
         lead={chronicle.lead}
-        picture={imageUrl}
+        picture={picture}
         subtitle={chronicle.subtitle}
         description={chronicle.description}
         emphasis={chronicle.emphasis}
