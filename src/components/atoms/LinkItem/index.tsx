@@ -25,7 +25,9 @@ export const LinkItem = ({
     styles.link,
     flexDirection === 'center' && styles['link--center'],
     flexDirection === 'end' && styles['link--end'],
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   return (
     <li className={classList}>
@@ -33,7 +35,7 @@ export const LinkItem = ({
         <a
           href={href}
           aria-label={icon ? `Share this on ${icon}` : undefined}
-          className={classList}
+          className={styles.link__icon}
         >
           <Icon icon={icon} fill='#000706' />
           {children}
