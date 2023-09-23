@@ -1,13 +1,33 @@
 .header {
-  padding: 4rem 2.3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  @include screen-size('desktop') {
-    max-width: 144rem;
-    margin: 0 auto;
-    padding-inline: 7rem;
+  &--withPadding {
+    padding: 4rem 2.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include screen-size('desktop') {
+      max-width: 144rem;
+      margin: 0 auto;
+      padding-inline: 7rem;
+    }
+  }
+
+  &--noPadding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include screen-size('desktop') {
+      padding-inline: 0;
+      margin: 0;
+      max-width: fit-content;
+      gap: 15rem;
+    }
+
+    @include screen-size('desktop-lg') {
+
+      gap: 0;
+    }
   }
 
   &__navigation {
