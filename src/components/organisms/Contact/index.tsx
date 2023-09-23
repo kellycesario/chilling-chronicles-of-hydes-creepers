@@ -59,10 +59,10 @@ export const Contact = ({ image }: ContactProps) => {
           />
         </article>
         <Image
-          src={'/contact-bg.png'}
+          src={image}
           alt={''}
-          width={500}
-          height={500}
+          width={1920}
+          height={1500}
           className={styles.contact__image}
         />
       </section>
