@@ -11,7 +11,7 @@ type MainHeaderProps = {
 export const MainHeader = ({ image }: MainHeaderProps) => {
   return (
     <section className={styles.mainHeader}>
-      <Header />
+      <Header spacing="withPadding"/>
       <Hero image={image} />
     </section>
   )

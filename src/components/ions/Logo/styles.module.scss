@@ -1,8 +1,12 @@
 .logo {
   fill: $black;
-  
+
   &:hover,
   &:focus {
     fill: $burgundy;
+  }
+
+  &--active {
+    fill: $purple;
   }
 }

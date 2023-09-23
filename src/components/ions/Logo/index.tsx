@@ -1,7 +1,10 @@
+'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import styles from './styles.module.scss'
 
 export const Logo = () => {
+  const pathname = usePathname()
   return (
     <Link href='/' aria-label='homepage'>
       <svg
@@ -10,8 +13,10 @@ export const Logo = () => {
         viewBox='0 0 128 27'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        className={styles.logo}
-        aria-hidden="true"
+        className={`${styles.logo} ${
+          pathname === '/' ? styles['logo--active'] : ''
+        }`}
+        aria-hidden='true'
       >
         <path
           fillRule='evenodd'

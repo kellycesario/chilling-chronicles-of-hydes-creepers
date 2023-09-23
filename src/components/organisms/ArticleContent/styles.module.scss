@@ -1,15 +1,40 @@
 .content {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  padding: 4rem 1.7rem;
 
-  @include screen-size('tablet') {
+
+  &__header {
+    @include layout;
     padding: 4rem 2.2rem;
+    
+    @include screen-size('desktop') {
+      display: flex;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    @include screen-size('desktop-lg') {
+      padding: 4rem 7rem;
+    }
   }
 
-  @include screen-size('desktop-lg') {
-    padding: 4rem 18rem;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 108rem;
+    margin: 0 auto;
+    padding: 0 1.7rem 4rem;
+
+    @include screen-size('tablet') {
+      padding: 4rem 2.2rem;
+    }
+
+    @include screen-size('desktop') {
+      padding: 4rem;
+    }
+
+    @include screen-size('desktop-lg') {
+      padding: 4rem 7rem;
+    }
   }
 
   &__link {
@@ -18,14 +43,16 @@
     gap: 1rem;
   }
 
-  &__container {
+  &__info {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    margin-top: 4rem;
 
     @include screen-size('tablet') {
       flex-direction: row;
       justify-content: space-between;
+      margin-top: 0;
     }
   }
 }

@@ -1,18 +1,36 @@
 .link {
   display: flex;
-  justify-content: center;
   @include text;
   cursor: pointer;
   color: $black;
+  
+  &--center {
+    justify-content: center;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
 
   @include screen-size('desktop') {
     width: 20rem;
   }
 
-  &:hover,
-  &:focus,
-  &:visited,
-  &:active {
+  &__icon {
+    width: fit-content;
+
+    @include screen-size('desktop') {
+      width: fit-content;
+    }
+  }
+
+  
+  &--active {
+    font-weight: 600;
+    color: $purple;
+  }
+  
+  &:hover {
     font-weight: 600;
     color: $purple;
 

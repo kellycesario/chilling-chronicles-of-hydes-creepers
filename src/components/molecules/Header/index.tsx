@@ -1,3 +1,4 @@
+'use client'
 import { Icon } from '@/components/atoms/Icon'
 import { LinkItem } from '@/components/atoms/LinkItem'
 import { Logo } from '@/components/ions/Logo'
@@ -5,7 +6,18 @@ import navigation from '@/data/navigation.json'
 import { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 
-export const Header = () => {
+type HeaderProps = {
+  spacing?: string
+}
+export const Header = ({ spacing }: HeaderProps) => {
+  const classList = [
+    styles.header,
+    spacing === 'withPadding' && styles['header--withPadding'],
+    spacing === 'noPadding' && styles['header--noPadding'],
+  ]
+    .filter(Boolean)
+    .join('')
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -27,7 +39,7 @@ export const Header = () => {
   }, [isMenuOpen])
 
   return (
-    <header className={styles.header}>
+    <header className={classList}>
       {!isMenuOpen && <Logo />}
       <nav className={styles.header__navigation}>
         <ul
@@ -38,7 +50,12 @@ export const Header = () => {
           tabIndex={isMenuOpen ? 0 : -1}
         >
           {navigation.map((item, index) => (
-            <LinkItem key={index} children={item.children} href={item.href} />
+            <LinkItem
+              key={index}
+              children={item.children}
+              href={item.href}
+              flexDirection='end'
+            />
           ))}
         </ul>
 

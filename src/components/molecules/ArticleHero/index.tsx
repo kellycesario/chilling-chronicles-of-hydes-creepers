@@ -1,5 +1,6 @@
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
+import { Share } from '@/components/molecules/Share'
 import Image from 'next/image'
 import styles from './styles.module.scss'
 
@@ -19,7 +20,7 @@ export const ArticleHero = ({
   return (
     <article className={styles.hero}>
       <Headings align='left' children={lead} color='black' level='1' />
-      <div className={styles.hero__container}>
+      <div className={styles.hero__pictureContainer}>
         <Image
           src={picture}
           alt={alt}
@@ -28,7 +29,10 @@ export const ArticleHero = ({
           className={styles.hero__picture}
         />
       </div>
-      <Text align='left' children={description} />
+      <div className={styles.hero__container}>
+        <Text align='left' children={description} />
+        <Share />
+      </div>
     </article>
   )
 }

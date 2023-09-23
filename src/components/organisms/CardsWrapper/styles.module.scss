@@ -16,10 +16,9 @@
 
   &__container {
     margin: 0 auto;
-    width: fit-content;
   }
 
-  &__inicialItems {
+  &__initialItems {
     @include container-cards;
     margin-bottom: 4rem;
 
@@ -60,11 +59,19 @@
   }
 
   &__interaction {
-    margin: 4rem 0;
-    max-width: 42rem;
+    margin-bottom: 4rem;
+
+    @include screen-size('tablet') {
+      margin-top: 4rem;
+      max-width: 50%;
+    }
 
     @include screen-size('desktop') {
-      max-width: 53rem;
+      max-width: 74rem;
+    }
+
+    @include screen-size('desktop-lg') {
+      max-width: 86rem;
     }
   }
 }

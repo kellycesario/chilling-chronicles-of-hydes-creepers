@@ -6,9 +6,9 @@ import { Text } from '@/components/atoms/Text'
 import { ArticleHero } from '@/components/molecules/ArticleHero'
 import { ArticleQuote } from '@/components/molecules/ArticleQuote'
 import { PublicationInfo } from '@/components/molecules/PublicationInfo'
-import { Share } from '@/components/molecules/Share'
 import Link from 'next/link'
 
+import { Header } from '@/components/molecules/Header'
 import styles from './styles.module.scss'
 
 type ArticleContentProps = {
@@ -44,33 +44,36 @@ export const ArticleContent = ({
   fourthParagraph,
 }: ArticleContentProps) => {
   return (
-    <>
-      <section className={styles.content}>
+    <section className={styles.content}>
+      <div className={styles.content__header}>
+        <Header spacing='noPadding' />
+      </div>
         <div className={styles.content__container}>
-          <Link href='/chilling-blog' className={styles.content__link}>
-            <Icon icon='arrow-left' fill='#765BA8' />
-            <Text align='left' children='Return to Chilling Blog' />
-          </Link>
 
-          <PublicationInfo reviewer={reviewer} date={date} />
-        </div>
 
-        <ArticleHero
-          alt={alt}
-          lead={lead}
-          picture={picture}
-          description={description}
-        />
+      <div className={styles.content__info}>
+        <Link href='/chilling-blog' className={styles.content__link}>
+          <Icon icon='arrow-left' fill='#765BA8' />
+          <Text align='left' children='Return to Chilling Blog' />
+        </Link>
 
-        <Share />
+        <PublicationInfo reviewer={reviewer} date={date} />
+      </div>
 
-        <Text align='left' children={firstParagraph} />
-        <Headings align='center' children={subtitle} color='purple' level='2' />
-        <Text align='left' children={secondParagraph} />
-        <Text align='left' children={thirdParagraph} />
-        <ArticleQuote emphasis={emphasis} quote={quote} />
-        <Text align='left' children={fourthParagraph} />
-      </section>
-    </>
+      <ArticleHero
+        alt={alt}
+        lead={lead}
+        picture={picture}
+        description={description}
+      />
+
+      <Text align='left' children={firstParagraph} />
+      <Headings align='center' children={subtitle} color='purple' level='2' />
+      <Text align='left' children={secondParagraph} />
+      <Text align='left' children={thirdParagraph} />
+      <ArticleQuote emphasis={emphasis} quote={quote} />
+      <Text align='left' children={fourthParagraph} />
+      </div>
+    </section>
   )
 }

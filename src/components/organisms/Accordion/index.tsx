@@ -29,21 +29,23 @@ export const Accordion = async ({
   ]
 
   return (
-    <section className={styles.accordion}>
-      <Headings
-        align='left'
-        children='Whispers from the Crypt'
-        color='purple'
-        level='3'
-      />
-      <div className={styles.accordion__items}>
-        {accordionProps.map((content, index) => (
-          <AccordionItem
-            key={index}
-            title={accordionTitle[index]}
-            content={content}
-          />
-        ))}
+    <section className={styles.accordion__container}>
+      <div className={styles.accordion}>
+        <Headings
+          align='left'
+          children='Whispers from the Crypt'
+          color='purple'
+          level='3'
+        />
+        <div className={styles.accordion__items}>
+          {accordionProps.map((content, index) => (
+            <AccordionItem
+              key={index}
+              title={accordionTitle[index]}
+              content={content}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )

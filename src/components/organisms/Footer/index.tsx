@@ -10,7 +10,7 @@ export const Footer = () => {
       <nav>
         <ul className={styles.footer__list}>
           {navigation.map((item, index) => (
-            <LinkItem key={index} children={item.children} href={item.href} />
+            <LinkItem key={index} children={item.children} href={item.href} flexDirection='center'/>
           ))}
         </ul>
       </nav>

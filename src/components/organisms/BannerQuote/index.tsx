@@ -46,7 +46,9 @@ export const BannerQuote = ({ image }: BannerQuoteProps) => {
       </article>
       <article className={styles.quote__container}>
         <Icon icon='quote-02' />
-        <Text align='center' children={currentQuote.quote} color='black' />
+        <div className={styles.quote__text}>
+          <Text align='center' children={currentQuote.quote} color='black' />
+        </div>
         <Tag author={currentQuote.author} />
       </article>
       <article>
