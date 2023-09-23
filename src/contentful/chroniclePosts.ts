@@ -148,7 +148,7 @@ export async function fetchChronicles({
     const chronicleResult = await contentful.getEntries<TypeChronicleSkeleton>({
       content_type: 'chronicle',
       include: 2,
-      order: ['fields.lead'],
+      order: ['-sys.createdAt'],
     });
 
     const chroniclePromises = chronicleResult.items.map(
