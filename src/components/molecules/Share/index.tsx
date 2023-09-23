@@ -10,7 +10,7 @@ export const Share = () => {
       <Text align='center' children='Share this on:' color='black' />
       <ul className={styles.share__list}>
         {share.map((item, index) => (
-          <LinkItem hasIcon key={index} href={item.href} icon={item.icon} />
+          <LinkItem hasIcon key={index} href={item.href} icon={item.icon} flexDirection='center'/>
         ))}
       </ul>
     </article>

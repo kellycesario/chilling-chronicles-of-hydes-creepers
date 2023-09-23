@@ -1,3 +1,4 @@
+'use client'
 import { Icon } from '@/components/atoms/Icon'
 import { LinkItem } from '@/components/atoms/LinkItem'
 import { Logo } from '@/components/ions/Logo'
@@ -38,7 +39,7 @@ export const Header = () => {
           tabIndex={isMenuOpen ? 0 : -1}
         >
           {navigation.map((item, index) => (
-            <LinkItem key={index} children={item.children} href={item.href} />
+            <LinkItem key={index} children={item.children} href={item.href} flexDirection='end'/>
           ))}
         </ul>
 
