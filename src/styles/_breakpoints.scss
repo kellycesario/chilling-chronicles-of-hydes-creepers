@@ -3,6 +3,7 @@ $breakpoints: (
   'tablet': 744px,
   'desktop': 1200px,
   'desktop-lg': 1440px,
+  'desktop-4k': 2560px,
 );
 
 @mixin screen-size($breakpoint) {
