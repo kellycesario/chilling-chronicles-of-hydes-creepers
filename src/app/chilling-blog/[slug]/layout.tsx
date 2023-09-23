@@ -1,6 +1,4 @@
-import { Header } from '@/components/molecules/Header'
 import { fetchChronicle } from '@/contentful/chroniclePosts'
-import styles from '@/styles/_slug.module.scss'
 import { Metadata, ResolvingMetadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
@@ -31,9 +29,6 @@ export default function SlugLayout({
 }) {
   return (
     <>
-      <section className={styles.layout}>
-        <Header />
-      </section>
       {children}
     </>
   )
