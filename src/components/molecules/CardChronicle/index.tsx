@@ -29,7 +29,8 @@ export const CardChronicle = ({
   description,
   lead,
 }: CardChronicleProps) => {
-  const classList = [styles.card, styles[`card--${size}`]]
+  const card = [styles.card, styles[`card--${size}`]]
+  const cardImage = [styles.card__image, styles[`card__image--${size}`]]
 
   const processedPicture =
     typeof picture === 'function' ? getProcessedPicture(picture) : picture
@@ -38,18 +39,22 @@ export const CardChronicle = ({
     backgroundImage: `url(${processedPicture})`,
   }
 
-  const characterLimit = size === 'large' ? 60 : size === '' ? 30 : 33
+  const characterLimit = size === 'large' ? 72 : size === '' ? 45 : 48
 
   const sub = description ? limitCharacters(description, characterLimit) : ''
+
+  const title = limitCharacters(lead, 30)
 
   return (
     <Link
       href={`/chilling-blog/${slug}`}
-      aria-label={`checkout the ${lead} chronicle`}
+      aria-label={lead}
+      className={styles.card__link}
     >
-      <article className={classList.join(' ')} style={background}>
+      <article className={card.join(' ')}>
+        <div className={cardImage.join(' ')} style={background}></div>
         <div className={styles.card__container}>
-          <Headings align='left' children={lead} color='white' level='3' />
+          <Headings align='left' children={title} color='white' level='3' />
           <Text align='left' children={sub} color='white' />
           <div className={styles.card__author}>
             <Icon icon='ghost' fill='#FDFFFF' />

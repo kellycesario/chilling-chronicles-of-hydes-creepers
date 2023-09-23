@@ -6,7 +6,7 @@ export default {
   title: 'Molecules/CardChronicle',
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered',
+    layout: '',
   },
   args: {
     reviewer: 'Daisy Jones',
@@ -20,7 +20,7 @@ export default {
   decorators: [
     (Story) => {
       return (
-        <div>
+        <div style={{marginTop: 20}}>
           <Sprites />
           <Story />
         </div>
@@ -39,6 +39,11 @@ export default {
       },
     },
     size: {
+      table: {
+        disable: true,
+      },
+    },
+    slug: {
       table: {
         disable: true,
       },
