@@ -3,13 +3,15 @@
   flex-direction: column;
   gap: 4rem;
   padding: 4rem 1.7rem;
+  max-width: 144rem;
+  margin: 0 auto;
 
   @include screen-size('tablet') {
     padding: 4rem 2.2rem;
   }
 
   @include screen-size('desktop-lg') {
-    padding: 4rem 18rem;
+    padding: 4rem 7rem;
   }
 
   &__link {
