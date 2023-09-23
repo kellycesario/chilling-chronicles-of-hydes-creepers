@@ -2,7 +2,6 @@ import { Accordion } from '@/components/organisms/Accordion'
 import { ArticleContent } from '@/components/organisms/ArticleContent'
 import { fetchChronicle, fetchChronicles } from '@/contentful/chroniclePosts'
 import { getProcessedPicture } from '@/utils/formatImage'
-import { Metadata, ResolvingMetadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
@@ -10,7 +9,7 @@ interface ChronicleParams {
   slug: string
 }
 
-interface ChronicleProps {
+export interface ChronicleProps {
   params: ChronicleParams
 }
 
@@ -18,24 +17,6 @@ export async function generateStaticParams(): Promise<ChronicleParams[]> {
   const chronicles = await fetchChronicles({ preview: false })
 
   return chronicles.map((post) => ({ slug: post.slug }))
-}
-
-export async function generateMetadata(
-  { params }: ChronicleProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const chronicle = await fetchChronicle({
-    slug: params.slug,
-    preview: draftMode().isEnabled,
-  })
-
-  if (!chronicle) {
-    return notFound()
-  }
-
-  return {
-    title: chronicle.lead,
-  }
 }
 
 async function Article({ params }: ChronicleProps) {
@@ -48,8 +29,7 @@ async function Article({ params }: ChronicleProps) {
     return notFound()
   }
 
-  const picture: string | undefined = getProcessedPicture(chronicle.picture);
-
+  const picture: string | undefined = getProcessedPicture(chronicle.picture)
 
   return (
     <section>
