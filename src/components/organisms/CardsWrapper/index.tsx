@@ -4,6 +4,7 @@ import { Button } from '@/components/atoms/Button'
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
 import { CardChronicle } from '@/components/molecules/CardChronicle'
+import { Search } from '@/components/organisms/Search'
 import { Chronicle } from '@/contentful/chroniclePosts'
 import { getProcessedPicture } from '@/utils/formatImage'
 import { useMediaQuery } from 'react-responsive'
@@ -52,6 +53,9 @@ export const CardsWrapper = ({
           color='burgundy'
         />
       </article>
+
+      <Search />
+
       <div className={styles.cards__container}>
         <article className={styles.cards__initialItems}>
           {Array.isArray(chronicle) &&
