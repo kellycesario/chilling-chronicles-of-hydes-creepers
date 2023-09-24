@@ -1,9 +1,9 @@
 import { Sprites } from '@/components/ions/Sprites'
-import { Search } from './index'
+import { SearchInput } from './index'
 
 export default {
-  component: Search,
-  title: 'Molecules/Search',
+  component: SearchInput,
+  title: 'Molecules/Search Input',
   tags: ['autodocs'],
   decorators: [
     (Story) => {

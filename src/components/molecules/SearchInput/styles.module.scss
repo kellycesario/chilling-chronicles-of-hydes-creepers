@@ -1,5 +1,11 @@
 .search {
-    @include text();
+  @include text();
+  max-width: 42rem;
+  margin: 0 auto;
+
+  @include screen-size('desktop') {
+    margin: unset;
+  }
 
   &__container {
     display: flex;
