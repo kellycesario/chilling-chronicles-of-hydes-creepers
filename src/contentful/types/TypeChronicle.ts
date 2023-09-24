@@ -3,6 +3,7 @@ import type { TypeAdditionalInformationSkeleton } from "./TypeAdditionalInformat
 
 export interface TypeChronicleFields {
     lead: EntryFieldTypes.Symbol;
+    headline: EntryFieldTypes.Symbol;
     picture: EntryFieldTypes.AssetLink;
     alt: EntryFieldTypes.Symbol;
     description: EntryFieldTypes.Symbol;

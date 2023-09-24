@@ -16,7 +16,7 @@ type CardsWrapperProps = {
   showButton: boolean
   chronicle?: Pick<
     Chronicle,
-    'lead' | 'reviewer' | 'picture' | 'description' | 'slug'
+    'lead' | 'reviewer' | 'picture' | 'description' | 'slug' | 'headline'
   >[]
 }
 
@@ -65,6 +65,7 @@ export const CardsWrapper = ({
                   size={isDesktop && index === 0 ? 'large' : ''}
                   description={item.description}
                   lead={item.lead}
+                  headline={item.headline}
                   slug={item.slug}
                 />
               )
@@ -82,6 +83,7 @@ export const CardsWrapper = ({
                   picture={processedPicture}
                   description={item.description}
                   lead={item.lead}
+                  headline={item.headline}
                   slug={item.slug}
                 />
               )

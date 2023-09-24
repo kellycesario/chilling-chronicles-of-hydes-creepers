@@ -18,6 +18,7 @@ type CardChronicleProps = {
   picture: Picture
   size?: string
   description: string
+  headline: string
   lead: string
 }
 
@@ -27,7 +28,8 @@ export const CardChronicle = ({
   picture,
   size,
   description,
-  lead,
+  headline,
+  lead
 }: CardChronicleProps) => {
   const card = [styles.card, styles[`card--${size}`]]
   const cardImage = [styles.card__image, styles[`card__image--${size}`]]
@@ -39,11 +41,7 @@ export const CardChronicle = ({
     backgroundImage: `url(${processedPicture})`,
   }
 
-  const characterLimit = size === 'large' ? 72 : size === '' ? 45 : 48
-
-  const sub = description ? limitCharacters(description, characterLimit) : ''
-
-  const title = limitCharacters(lead, 30)
+  const descr = description ? limitCharacters(description, 45) : ''
 
   return (
     <Link
@@ -54,8 +52,8 @@ export const CardChronicle = ({
       <article className={card.join(' ')}>
         <div className={cardImage.join(' ')} style={background}></div>
         <div className={styles.card__container}>
-          <Headings align='left' children={title} color='white' level='3' />
-          <Text align='left' children={sub} color='white' />
+          <Headings align='left' children={headline} color='white' level='3' />
+          <Text align='left' children={descr} color='white' />
           <div className={styles.card__author}>
             <Icon icon='ghost' fill='#FDFFFF' />
             <Text align='left' children={reviewer} color='white' />

@@ -20,6 +20,7 @@ export interface AdditionalInformation {
 
 export interface Chronicle {
   lead: string
+  headline: string
   subtitle: string
   reviewer: string
   picture: Asset<ChainModifiers, string> | UnresolvedLink<'Asset'>
@@ -104,6 +105,7 @@ export async function parseContentfulBlogPost(
 
     return {
       lead: chronicleEntry.fields.lead || '',
+      headline: chronicleEntry.fields.headline || '',
       subtitle: chronicleEntry.fields.subtitle || '',
       reviewer: chronicleEntry.fields.reviewer || '',
       picture: chronicleEntry.fields.picture,
