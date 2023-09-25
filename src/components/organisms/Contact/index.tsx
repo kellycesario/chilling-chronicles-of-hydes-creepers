@@ -55,7 +55,7 @@ export const Contact = ({ image }: ContactProps) => {
             isButton={false}
             label='Summon us'
             level={buttonLevel}
-            target='_blank'
+            target='_self'
           />
         </article>
         <Image
