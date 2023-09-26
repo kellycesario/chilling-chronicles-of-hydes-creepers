@@ -21,12 +21,10 @@ export async function generateStaticParams(): Promise<ChronicleParams[]> {
   return chronicles.map((post) => ({ slug: post.slug }))
 }
 
-async function Home({}: ChronicleProps) {
+async function Home() {
   const chronicles = await fetchChronicles({
     preview: draftMode().isEnabled,
   })
-
-  console.log('teste:', chronicles)
 
   return (
     <main>
