@@ -12,7 +12,7 @@ export const Text = ({ align, children, color, weight }: TextProps) => {
     styles[`text--${align}`],
     styles[`text--${color}`],
     styles[`text--${weight}`],
-  ]
+  ].join(' ')
 
-  return <p className={classList.join(' ')}>{children}</p>
+  return <p className={classList}>{children}</p>
 }

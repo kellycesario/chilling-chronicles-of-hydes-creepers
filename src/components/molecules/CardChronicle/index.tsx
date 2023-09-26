@@ -17,7 +17,6 @@ type CardChronicleProps = {
   slug?: string
   picture: Picture
   size?: string
-  description: string
   headline: string
   lead: string
 }
@@ -27,12 +26,11 @@ export const CardChronicle = ({
   slug,
   picture,
   size,
-  description,
   headline,
   lead
 }: CardChronicleProps) => {
-  const card = [styles.card, styles[`card--${size}`]]
-  const cardImage = [styles.card__image, styles[`card__image--${size}`]]
+  const card = [styles.card, styles[`card--${size}`]].join(' ')
+  const cardImage = [styles.card__image, styles[`card__image--${size}`]].join(' ')
 
   const processedPicture =
     typeof picture === 'function' ? getProcessedPicture(picture) : picture
@@ -41,7 +39,7 @@ export const CardChronicle = ({
     backgroundImage: `url(${processedPicture})`,
   }
 
-  const descr = description ? limitCharacters(description, 45) : ''
+  const title = lead ? limitCharacters(lead, 37) : ''
 
   return (
     <Link
@@ -49,11 +47,11 @@ export const CardChronicle = ({
       aria-label={lead}
       className={styles.card__link}
     >
-      <article className={card.join(' ')}>
-        <div className={cardImage.join(' ')} style={background}></div>
+      <article className={card}>
+        <div className={cardImage} style={background}></div>
         <div className={styles.card__container}>
           <Headings align='left' children={headline} color='white' level='3' />
-          <Text align='left' children={descr} color='white' />
+          <Text align='left' children={title} color='white' />
           <div className={styles.card__author}>
             <Icon icon='ghost' fill='#FDFFFF' />
             <Text align='left' children={reviewer} color='white' />

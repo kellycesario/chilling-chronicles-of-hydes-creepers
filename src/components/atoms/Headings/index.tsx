@@ -13,9 +13,9 @@ export const Headings = ({ align, children, color, level }: HeadingsProps) => {
     styles[`headings--${align}`],
     styles[`headings--${color}`],
     styles[`headings--h${level}`],
-  ]
+  ].join(' ')
 
-  const props = { className: classList.join(' ') }
+  const props = { className: classList }
   const element = createElement('h' + level, props, children)
 
   return element
