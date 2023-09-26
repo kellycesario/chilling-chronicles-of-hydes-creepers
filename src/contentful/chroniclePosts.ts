@@ -3,11 +3,16 @@ import { Asset, ChainModifiers, Entry, UnresolvedLink } from 'contentful'
 import contentfulClient from './contentfulClient'
 import {
   TypeAdditionalInformationSkeleton,
-  TypeChronicleSkeleton,
+  TypeChronicleSkeleton, TypeCategorySkeleton
 } from './types'
 
 type ChronicleEntry = Entry<TypeChronicleSkeleton, undefined, string>
 type InfoEntry = Entry<TypeAdditionalInformationSkeleton, undefined, string>
+type CategoryEntry = Entry<TypeCategorySkeleton, undefined, string>
+
+export interface Category {
+  category?: "death" | "ghost" | "religion" | "unworldly" | "witchcraft";
+}
 
 export interface AdditionalInformation {
   officialSummary: string
@@ -35,6 +40,7 @@ export interface Chronicle {
   date: string
   alt: string
   additionalInformation: AdditionalInformation | null
+  category?: Category | UnresolvedLink<"Entry"> | Entry<TypeCategorySkeleton, undefined, string>;
 }
 
 async function fetchAdditionalInformationByIsbn({
@@ -103,6 +109,8 @@ export async function parseContentfulBlogPost(
     const infoEntry = await infoEntryPromise;
     const additionalInformation = parseContentfulInfo(infoEntry);
 
+    const category = chronicleEntry.fields.category?.fields.category || ''
+
     return {
       lead: chronicleEntry.fields.lead || '',
       headline: chronicleEntry.fields.headline || '',
@@ -123,6 +131,7 @@ export async function parseContentfulBlogPost(
       quote: chronicleEntry.fields.quote || '',
       date: chronicleEntry.fields.date || '',
       alt: chronicleEntry.fields.alt || '',
+      category: category,
       additionalInformation: additionalInformation || {
         officialSummary: '',
         sinisterBookInsights: '',
@@ -137,7 +146,6 @@ export async function parseContentfulBlogPost(
     throw error
   }
 }
-
 interface FetchChroniclesOptions {
   preview: boolean
 }

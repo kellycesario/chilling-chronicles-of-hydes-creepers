@@ -1,5 +1,6 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 import type { TypeAdditionalInformationSkeleton } from "./TypeAdditionalInformation";
+import type { TypeCategorySkeleton } from "./TypeCategory";
 
 export interface TypeChronicleFields {
     lead: EntryFieldTypes.Symbol;
@@ -17,6 +18,7 @@ export interface TypeChronicleFields {
     reviewer: EntryFieldTypes.Symbol;
     date: EntryFieldTypes.Date;
     additionalInformation: EntryFieldTypes.EntryLink<TypeAdditionalInformationSkeleton>;
+    category?: EntryFieldTypes.EntryLink<TypeCategorySkeleton>;
     slug: EntryFieldTypes.Symbol;
 }
 
