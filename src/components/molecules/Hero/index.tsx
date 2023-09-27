@@ -30,6 +30,7 @@ export const Hero = ({ image }: HeroProps) => {
           width={500}
           height={500}
           className={styles.hero__picture}
+          priority={true}	
         />
       </article>
     </section>
