@@ -4,9 +4,10 @@ import { Button } from '@/components/atoms/Button'
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
 import { CardChronicle } from '@/components/molecules/CardChronicle'
-import { Search } from '@/components/organisms/Search'
+import { SearchInput } from '@/components/molecules/SearchInput'
 import { Chronicle } from '@/contentful/chroniclePosts'
 import { getProcessedPicture } from '@/utils/formatImage'
+import { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styles from './styles.module.scss'
 
@@ -15,10 +16,17 @@ type CardsWrapperProps = {
   numCardsTablet: number
   numCardsDesktop: number
   showButton: boolean
-  chronicle?: Pick<
-    Chronicle,
-    'lead' | 'reviewer' | 'picture' | 'description' | 'slug' | 'headline'
-  >[]
+  chronicle?: (Partial<Chronicle> &
+    Pick<
+      Chronicle,
+      | 'lead'
+      | 'reviewer'
+      | 'picture'
+      | 'description'
+      | 'slug'
+      | 'headline'
+      | 'category'
+    >)[]
 }
 
 export const CardsWrapper = ({
@@ -38,6 +46,35 @@ export const CardsWrapper = ({
     ? numCardsTablet
     : numCardsDesktop
 
+  const [searchText, setSearchText] = useState('')
+  const [filteredChronicles, setFilteredChronicles] = useState<
+    Partial<Chronicle>[]
+  >([])
+
+  useEffect(() => {
+    handleSearch(searchText)
+  }, [searchText])
+
+  const handleSearch = (query: string) => {
+    setSearchText(query)
+
+    if (!query) {
+      setFilteredChronicles(chronicle || [])
+      return
+    }
+
+    const lowerCaseQuery = query.toLowerCase()
+    const filtered = (chronicle || []).filter(
+      (item) =>
+        item.lead.toLowerCase().includes(lowerCaseQuery) ||
+        item.reviewer.toLowerCase().includes(lowerCaseQuery) ||
+        item.description.toLowerCase().includes(lowerCaseQuery) ||
+        item.headline.toLowerCase().includes(lowerCaseQuery)
+    )
+
+    setFilteredChronicles(filtered)
+  }
+
   return (
     <section className={styles.cards}>
       <article className={styles.cards__text}>
@@ -54,12 +91,15 @@ export const CardsWrapper = ({
         />
       </article>
 
-      <Search />
+      <article className={styles.cards__search}>
+        <SearchInput onSearch={handleSearch} />
+      </article>
 
       <div className={styles.cards__container}>
         <article className={styles.cards__initialItems}>
-          {Array.isArray(chronicle) &&
-            chronicle.slice(0, 2).map((item, index) => {
+          {(searchText === '' ? chronicle : filteredChronicles)
+            .slice(0, 2)
+            .map((item, index) => {
               const processedPicture = getProcessedPicture(item.picture)
               return (
                 <CardChronicle
@@ -67,7 +107,6 @@ export const CardsWrapper = ({
                   reviewer={item.reviewer}
                   picture={processedPicture}
                   size={isDesktop && index === 0 ? 'large' : ''}
-                  description={item.description}
                   lead={item.lead}
                   headline={item.headline}
                   slug={item.slug}
@@ -77,15 +116,15 @@ export const CardsWrapper = ({
         </article>
 
         <article className={styles.cards__additionalItems}>
-          {Array.isArray(chronicle) &&
-            chronicle.slice(2, numCards).map((item, index) => {
+          {(searchText === '' ? chronicle : filteredChronicles)
+            .slice(2, numCards)
+            .map((item, index) => {
               const processedPicture = getProcessedPicture(item.picture)
               return (
                 <CardChronicle
                   key={index}
                   reviewer={item.reviewer}
                   picture={processedPicture}
-                  description={item.description}
                   lead={item.lead}
                   headline={item.headline}
                   slug={item.slug}
