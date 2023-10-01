@@ -12,6 +12,7 @@ type ButtonProps = {
   level?: string
   onClick?: () => void
   target?: string
+  type?: string
 }
 
 export const Button = ({
