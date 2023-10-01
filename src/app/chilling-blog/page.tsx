@@ -29,7 +29,7 @@ async function Blog() {
       <CardsWrapper
         numCardsMobile={3}
         numCardsTablet={6}
-        numCardsDesktop={20}
+        numCardsDesktop={6}
         showButton={false}
         chronicle={chronicles}
       />
