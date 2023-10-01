@@ -9,10 +9,6 @@ interface ChronicleParams {
   slug: string
 }
 
-interface ChronicleProps {
-  params: ChronicleParams
-}
-
 export async function generateStaticParams(): Promise<ChronicleParams[]> {
   const chronicles = await fetchChronicles({
     preview: false,
