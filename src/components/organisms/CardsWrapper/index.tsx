@@ -4,9 +4,11 @@ import { Button } from '@/components/atoms/Button'
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
 import { CardChronicle } from '@/components/molecules/CardChronicle'
+import { Pagination } from '@/components/molecules/Pagination'
 import { SearchInput } from '@/components/molecules/SearchInput'
 import { Category, Chronicle } from '@/contentful/chroniclePosts'
 import { getProcessedPicture } from '@/utils/formatImage'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styles from './styles.module.scss'
@@ -31,6 +33,7 @@ type CardsWrapperProps = {
   selectedCategory?: string
   setSelectedCategory?: (category: string) => void
 }
+
 export const CardsWrapper = ({
   numCardsMobile,
   numCardsTablet,
@@ -39,6 +42,9 @@ export const CardsWrapper = ({
   chronicle,
   selectedCategory,
 }: CardsWrapperProps) => {
+  const pathname = usePathname()
+  const isChillingBlogPage = pathname === '/chilling-blog'
+
   const isMobile = useMediaQuery({ maxWidth: 743 })
   const isTablet = useMediaQuery({ maxWidth: 1199 })
   const isDesktop = useMediaQuery({ minWidth: 1200 })
@@ -47,6 +53,7 @@ export const CardsWrapper = ({
   const [filteredChronicles, setFilteredChronicles] = useState<
     Partial<Chronicle>[]
   >([])
+  const [currentPage, setCurrentPage] = useState(1)
 
   const handleSearch = (query: string) => {
     setSearchText(query)
@@ -84,7 +91,24 @@ export const CardsWrapper = ({
     setFilteredChronicles(filtered)
   }, [searchText, selectedCategory, chronicle])
 
-  const renderedCards = filteredChronicles
+  const cardsPerPage =
+    isMobile || isTablet
+      ? numCardsMobile
+      : isDesktop
+      ? numCardsDesktop
+      : numCardsTablet
+  const indexOfLastCard = currentPage * cardsPerPage
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage
+  const currentCards = filteredChronicles?.slice(
+    indexOfFirstCard,
+    indexOfLastCard
+  )
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
+
+  const renderedCards = currentCards
     ?.filter((item) => !selectedCategory || item.category === selectedCategory)
     .map((item, index) => {
       const processedPicture = getProcessedPicture(item.picture)
@@ -98,10 +122,10 @@ export const CardsWrapper = ({
           lead={item.lead}
           headline={item.headline}
           slug={item.slug}
-          category={item.category}
         />
       )
     })
+
   return (
     <section className={styles.cards}>
       <article className={styles.cards__text}>
@@ -136,14 +160,7 @@ export const CardsWrapper = ({
         <article className={styles.cards__additionalItems}>
           {renderedCards &&
             renderedCards
-              .slice(
-                2,
-                isMobile
-                  ? numCardsMobile
-                  : isTablet
-                  ? numCardsTablet
-                  : numCardsDesktop
-              )
+              .slice(2, cardsPerPage)
               .filter(
                 (card) =>
                   !selectedCategory || card.props.category === selectedCategory
@@ -161,6 +178,14 @@ export const CardsWrapper = ({
             />
           )}
         </article>
+
+        {isChillingBlogPage && (
+          <Pagination
+            totalPages={Math.ceil(filteredChronicles?.length / cardsPerPage)}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+          />
+        )}
       </div>
     </section>
   )

@@ -12,6 +12,7 @@ type ButtonProps = {
   level?: string
   onClick?: () => void
   target?: string
+  type?: string
 }
 
 export const Button = ({
@@ -30,18 +31,17 @@ export const Button = ({
     styles[`button--${level}`],
     hasIcon ? styles.button__icon : '',
     className,
-  ]
-  const combinedClassName = classList.join(' ')
+  ].join(' ')
 
   return (
     <>
       {isButton ? (
-        <button onClick={onClick} className={combinedClassName}>
+        <button onClick={onClick} className={classList}>
           {hasIcon && <Icon icon={icon} />}
           {label}
         </button>
       ) : (
-        <Link href={href || ''} target={target} className={combinedClassName}>
+        <Link href={href || ''} target={target} className={classList}>
           {hasIcon && <Icon icon={icon} />}
           {label}
         </Link>

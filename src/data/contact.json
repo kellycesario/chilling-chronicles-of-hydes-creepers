@@ -5,7 +5,10 @@
     "label": "Name",
     "placeholder": "Bloody Mary",
     "type": "text",
-    "isTextarea": false
+    "isTextarea": false,
+    "validation": {
+      "required": "You forgot to insert your name, but this is a required field."
+    }
   },
   {
     "icon": "at-sign",
@@ -13,7 +16,10 @@
     "label": "Email address",
     "placeholder": "bloody.mary@hell.com",
     "type": "email",
-    "isTextarea": false
+    "isTextarea": false,
+    "validation": {
+      "required": "You forgot to insert your email or inserted an invalid email account."
+    }
   },
   {
     "icon": "fire",
@@ -21,13 +27,19 @@
     "label": "Subject",
     "placeholder": "Summoning",
     "type": "text",
-    "isTextarea": false
+    "isTextarea": false,
+    "validation": {
+      "required": "You forgot to insert the subject, but this is a required field."
+    }
   },
   {
     "icon": "plus",
     "id": "message",
     "label": "Message",
     "placeholder": "Dark secrets lie beyond...",
-    "isTextarea": true
+    "isTextarea": true,
+    "validation": {
+      "required": "You forgot to insert the message, but this is a required field."
+    }
   }
 ]
