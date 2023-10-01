@@ -2,7 +2,7 @@
   "name": "Chilling Chronicles of Hydes Creepers",
   "description": "Explore chilling and mysterious stories on 'Chilling Chronicles of Hydes Creepers' blog. Dive into suspenseful narratives, eerie encounters, and enigmatic events, delivering thrilling content for mystery enthusiasts",
   "short_name": "Chilling Blog",
-  "start_url": "",
+  "start_url": "https://chilling-chronicles-of-hydes-creepers.vercel.app/",
   "theme_color": "#765ba8",
   "background_color": "#fdffff",
   "display": "standalone",
