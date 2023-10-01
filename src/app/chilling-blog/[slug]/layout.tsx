@@ -19,6 +19,7 @@ export async function generateMetadata(
 
   return {
     title: chronicle.lead,
+    themeColor: '#765ba8'
   }
 }
 

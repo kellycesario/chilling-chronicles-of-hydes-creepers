@@ -1,16 +1,13 @@
 import { BannerQuote } from '@/components/organisms/BannerQuote'
-import { CardsWrapper } from '@/components/organisms/CardsWrapper'
 import { Contact } from '@/components/organisms/Contact'
 import { MainHeader } from '@/components/organisms/MainHeader'
 import { fetchChronicles } from '@/contentful/chroniclePosts'
 import { draftMode } from 'next/headers'
 
+import { CardsWrapper } from '@/components/organisms/CardsWrapper'
+
 interface ChronicleParams {
   slug: string
-}
-
-interface ChronicleProps {
-  params: ChronicleParams
 }
 
 export async function generateStaticParams(): Promise<ChronicleParams[]> {
@@ -21,7 +18,7 @@ export async function generateStaticParams(): Promise<ChronicleParams[]> {
   return chronicles.map((post) => ({ slug: post.slug }))
 }
 
-async function Blog({ }: ChronicleProps) {
+async function Blog() {
   const chronicles = await fetchChronicles({
     preview: draftMode().isEnabled,
   })

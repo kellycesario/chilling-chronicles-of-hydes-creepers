@@ -3,11 +3,15 @@ import { Asset, ChainModifiers, Entry, UnresolvedLink } from 'contentful'
 import contentfulClient from './contentfulClient'
 import {
   TypeAdditionalInformationSkeleton,
-  TypeChronicleSkeleton,
+  TypeChronicleSkeleton, TypeCategorySkeleton
 } from './types'
 
 type ChronicleEntry = Entry<TypeChronicleSkeleton, undefined, string>
 type InfoEntry = Entry<TypeAdditionalInformationSkeleton, undefined, string>
+
+export interface Category {
+  category?: "death" | "ghost" | "religion" | "unworldly" | "witchcraft";
+}
 
 export interface AdditionalInformation {
   officialSummary: string
@@ -20,6 +24,7 @@ export interface AdditionalInformation {
 
 export interface Chronicle {
   lead: string
+  headline: string
   subtitle: string
   reviewer: string
   picture: Asset<ChainModifiers, string> | UnresolvedLink<'Asset'>
@@ -34,6 +39,7 @@ export interface Chronicle {
   date: string
   alt: string
   additionalInformation: AdditionalInformation | null
+  category?: Category | UnresolvedLink<"Entry"> | Entry<TypeCategorySkeleton, undefined, string>;
 }
 
 async function fetchAdditionalInformationByIsbn({
@@ -102,8 +108,11 @@ export async function parseContentfulBlogPost(
     const infoEntry = await infoEntryPromise;
     const additionalInformation = parseContentfulInfo(infoEntry);
 
+    const category = chronicleEntry.fields.category?.fields.category || ''
+
     return {
       lead: chronicleEntry.fields.lead || '',
+      headline: chronicleEntry.fields.headline || '',
       subtitle: chronicleEntry.fields.subtitle || '',
       reviewer: chronicleEntry.fields.reviewer || '',
       picture: chronicleEntry.fields.picture,
@@ -121,6 +130,7 @@ export async function parseContentfulBlogPost(
       quote: chronicleEntry.fields.quote || '',
       date: chronicleEntry.fields.date || '',
       alt: chronicleEntry.fields.alt || '',
+      category: category,
       additionalInformation: additionalInformation || {
         officialSummary: '',
         sinisterBookInsights: '',
@@ -135,7 +145,6 @@ export async function parseContentfulBlogPost(
     throw error
   }
 }
-
 interface FetchChroniclesOptions {
   preview: boolean
 }
@@ -148,7 +157,7 @@ export async function fetchChronicles({
     const chronicleResult = await contentful.getEntries<TypeChronicleSkeleton>({
       content_type: 'chronicle',
       include: 2,
-      order: ['fields.lead'],
+      order: ['-sys.createdAt'],
     });
 
     const chroniclePromises = chronicleResult.items.map(

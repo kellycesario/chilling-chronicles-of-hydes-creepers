@@ -1,8 +1,12 @@
 [
-  { "label": "All", "value": "All chronicles" },
-  { "label": "Unworldly", "value": "Unworldly chronicles" },
-  { "label": "Death", "value": "Death chronicles" },
-  { "label": "Teligious topics", "value": "Teligious topics chronicles" },
-  { "label": "Witchcraft", "value": "Witchcraft chronicles" },
-  { "label": "Ghost", "value": "Ghost chronicles" }
+  { "label": "All", "value": "All chronicles", "icon": "fire" },
+  { "label": "Unworldly", "value": "Unworldly chronicles", "icon": "alien" },
+  { "label": "Death", "value": "Death chronicles", "icon": "skull" },
+  {
+    "label": "Religion",
+    "value": "Religious topics chronicles",
+    "icon": "cross"
+  },
+  { "label": "Witchcraft", "value": "Witchcraft chronicles", "icon": "books" },
+  { "label": "Ghost", "value": "Ghost chronicles", "icon": "ghost" }
 ]

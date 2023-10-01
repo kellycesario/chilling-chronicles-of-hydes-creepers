@@ -19,7 +19,7 @@ const preview: Preview = {
         },
         {
           name: 'light-gray',
-          value: '#f5f7f',
+          value: '#f5f7fa',
         },
         {
           name: 'purple-mode',

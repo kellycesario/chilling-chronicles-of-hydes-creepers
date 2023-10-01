@@ -8,7 +8,13 @@ type InputProps = {
   label: string
   placeholder: string
   type: string
+  value?: string
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void
 }
+
 export const Input = ({
   icon,
   id,
@@ -16,6 +22,9 @@ export const Input = ({
   label,
   placeholder,
   type,
+  value,
+  onChange,
+  onKeyDown,
 }: InputProps) => {
   return (
     <>
@@ -37,6 +46,9 @@ export const Input = ({
             type={type}
             id={id}
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+            onKeyDown={onKeyDown}
           />
         )}
       </div>

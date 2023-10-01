@@ -2,7 +2,7 @@
   {
     "icon": "skull",
     "id": "name",
-    "label": "name",
+    "label": "Name",
     "placeholder": "Bloody Mary",
     "type": "text",
     "isTextarea": false
@@ -10,7 +10,7 @@
   {
     "icon": "at-sign",
     "id": "email",
-    "label": "email address",
+    "label": "Email address",
     "placeholder": "bloody.mary@hell.com",
     "type": "email",
     "isTextarea": false
