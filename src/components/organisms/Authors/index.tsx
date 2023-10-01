@@ -15,10 +15,12 @@ export const Authors = () => {
             key={index}
             alt={item.alt}
             description={item.description}
-            discord={item.discord}
-            linkedin={item.discord}
             name={item.name}
             picture={item.picture}
+            firstIcon={item.firstIcon}
+            secondIcon={item.secondIcon}
+            firstHref={item.firstHref}
+            secondHref={item.secondHref}
           />
         ))}
       </div>

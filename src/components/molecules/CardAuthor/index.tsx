@@ -7,19 +7,23 @@ import styles from './styles.module.scss'
 type CardAuthorProps = {
   alt: string
   description: string
-  discord: string
-  linkedin: string
   name: string
   picture: string
+  firstIcon: string
+  secondIcon: string
+  firstHref: string
+  secondHref: string
 }
 
 export const CardAuthor = ({
   alt,
   description,
-  discord,
-  linkedin,
   name,
   picture,
+  firstIcon,
+  secondIcon,
+  firstHref,
+  secondHref,
 }: CardAuthorProps) => {
   return (
     <article className={styles.card}>
@@ -34,18 +38,18 @@ export const CardAuthor = ({
       <Text align='left' color='black' children={description} />
       <div className={styles.card__container}>
         <a
-          href={discord}
+          href={firstHref}
           className={styles.card__icon}
-          aria-label='join me in discord'
+          aria-label={`connect with me in ${firstIcon}`}
         >
-          <Icon icon='discord' />
+          <Icon icon={firstIcon}  />
         </a>
         <a
-          href={linkedin}
+          href={secondHref}
           className={styles.card__icon}
-          aria-label='connect with me in linkedin'
+          aria-label={`connect with me in ${secondIcon}`}
         >
-          <Icon icon='linkedin' />
+          <Icon icon={secondIcon}  />
         </a>
       </div>
     </article>
