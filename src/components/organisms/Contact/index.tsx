@@ -12,17 +12,20 @@ type ContactProps = {
 }
 
 export const Contact = ({ image }: ContactProps) => {
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState<number>(0)
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth)
     }
 
-    window.addEventListener('resize', handleResize)
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth)
+      window.addEventListener('resize', handleResize)
 
-    return () => {
-      window.removeEventListener('resize', handleResize)
+      return () => {
+        window.removeEventListener('resize', handleResize)
+      }
     }
   }, [])
 
@@ -34,37 +37,37 @@ export const Contact = ({ image }: ContactProps) => {
   const buttonLevel = windowWidth < 744 ? 'tertiary' : 'secondary'
 
   return (
-      <section className={styles.contact}>
-        <article
-          style={windowWidth < 744 ? background : {}}
-          className={styles.contact__container}
-        >
-          <Headings
-            align='left'
-            children='Creepy reviews in your inbox'
-            color={headingsColor}
-            level='4'
-          />
-          <Text
-            align='left'
-            children='Unleash your darkest questions or eerie curiosities by communing with our spectral agents'
-            color={headingsColor}
-          />
-          <Button
-            href='/summon-us'
-            isButton={false}
-            label='Summon us'
-            level={buttonLevel}
-            target='_self'
-          />
-        </article>
-        <Image
-          src={image}
-          alt={''}
-          width={1920}
-          height={1500}
-          className={styles.contact__image}
+    <section className={styles.contact}>
+      <article
+        style={windowWidth < 744 ? background : {}}
+        className={styles.contact__container}
+      >
+        <Headings
+          align='left'
+          children='Creepy reviews in your inbox'
+          color={headingsColor}
+          level='4'
         />
-      </section>
+        <Text
+          align='left'
+          children='Unleash your darkest questions or eerie curiosities by communing with our spectral agents'
+          color={headingsColor}
+        />
+        <Button
+          href='/summon-us'
+          isButton={false}
+          label='Summon us'
+          level={buttonLevel}
+          target='_self'
+        />
+      </article>
+      <Image
+        src={image}
+        alt={''}
+        width={1920}
+        height={1500}
+        className={styles.contact__image}
+      />
+    </section>
   )
 }
