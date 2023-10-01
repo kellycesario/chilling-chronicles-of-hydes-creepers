@@ -14,6 +14,9 @@ dependencies:
   '@contentful/rich-text-types':
     specifier: ^16.2.1
     version: 16.2.1
+  '@hotjar/browser':
+    specifier: ^1.0.9
+    version: 1.0.9
   '@types/node':
     specifier: 20.4.5
     version: 20.4.5
@@ -41,6 +44,9 @@ dependencies:
   react-hook-form:
     specifier: ^7.46.1
     version: 7.46.1(react@18.2.0)
+  react-hotjar:
+    specifier: ^6.1.0
+    version: 6.1.0
   react-responsive:
     specifier: ^9.0.2
     version: 9.0.2(react@18.2.0)
@@ -1823,6 +1829,10 @@ packages:
   /@floating-ui/utils@0.1.1:
     resolution: {integrity: sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==}
     dev: true
+
+  /@hotjar/browser@1.0.9:
+    resolution: {integrity: sha512-n9akDMod8BLGpYEQCrHwlYWWd63c1HlhUSXNIDfClZtKYXbUjIUOFlNZNNcUxgHTCsi4l2i+SWKsGsO0t93S8w==}
+    dev: false
 
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -9641,6 +9651,10 @@ packages:
       react: ^16.8.0 || ^17 || ^18
     dependencies:
       react: 18.2.0
+    dev: false
+
+  /react-hotjar@6.1.0:
+    resolution: {integrity: sha512-V1UJixDMspAIrbGIFG282U7mH2aK1JBid0YR8F9oscb6lTkjMga+gst2gesxJDsqsax+k+lM1LqRXYzmUu8izA==}
     dev: false
 
   /react-inspector@6.0.2(react@18.2.0):
