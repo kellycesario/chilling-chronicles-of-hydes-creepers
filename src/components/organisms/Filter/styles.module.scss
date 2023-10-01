@@ -1,7 +1,0 @@
-.filter {
-  @include screen-size('desktop') {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
