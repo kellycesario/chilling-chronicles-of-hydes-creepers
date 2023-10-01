@@ -8,7 +8,6 @@ import {
 
 type ChronicleEntry = Entry<TypeChronicleSkeleton, undefined, string>
 type InfoEntry = Entry<TypeAdditionalInformationSkeleton, undefined, string>
-type CategoryEntry = Entry<TypeCategorySkeleton, undefined, string>
 
 export interface Category {
   category?: "death" | "ghost" | "religion" | "unworldly" | "witchcraft";
