@@ -3,14 +3,15 @@ import { Asset, ChainModifiers, Entry, UnresolvedLink } from 'contentful'
 import contentfulClient from './contentfulClient'
 import {
   TypeAdditionalInformationSkeleton,
-  TypeChronicleSkeleton, TypeCategorySkeleton
+  TypeCategorySkeleton,
+  TypeChronicleSkeleton,
 } from './types'
 
 type ChronicleEntry = Entry<TypeChronicleSkeleton, undefined, string>
 type InfoEntry = Entry<TypeAdditionalInformationSkeleton, undefined, string>
 
 export interface Category {
-  category?: "death" | "ghost" | "religion" | "unworldly" | "witchcraft";
+  category?: 'death' | 'ghost' | 'religion' | 'unworldly' | 'witchcraft'
 }
 
 export interface AdditionalInformation {
@@ -39,7 +40,11 @@ export interface Chronicle {
   date: string
   alt: string
   additionalInformation: AdditionalInformation | null
-  category?: Category | UnresolvedLink<"Entry"> | Entry<TypeCategorySkeleton, undefined, string>;
+  category?:
+    | Category
+    | UnresolvedLink<'Entry'>
+    | Entry<TypeCategorySkeleton, undefined, string>
+    | { category: string }
 }
 
 async function fetchAdditionalInformationByIsbn({
@@ -90,6 +95,10 @@ function parseContentfulInfo(
   }
 }
 
+function isUnresolvedLink(obj: any): obj is UnresolvedLink<'Entry'> {
+  return obj.sys?.type === 'Link' && obj.sys?.linkType === 'Entry'
+}
+
 export async function parseContentfulBlogPost(
   chronicleEntry?: ChronicleEntry
 ): Promise<Chronicle | null> {
@@ -98,17 +107,27 @@ export async function parseContentfulBlogPost(
   }
 
   try {
-    const isbn = chronicleEntry.fields.additionalInformation?.fields.isbn || ''
+    const additionalInformationFields =
+      chronicleEntry.fields?.additionalInformation
+    const categoryFields = chronicleEntry.fields?.category
 
-    const infoEntryPromise = fetchAdditionalInformationByIsbn({
-      preview: false,
-      isbn,
-    });
+    let isbn: string
+    if (
+      additionalInformationFields &&
+      !isUnresolvedLink(additionalInformationFields)
+    ) {
+      isbn = additionalInformationFields.fields?.isbn || ''
+    } else {
+      isbn = ''
+    }
 
-    const infoEntry = await infoEntryPromise;
-    const additionalInformation = parseContentfulInfo(infoEntry);
+    const category = isUnresolvedLink(categoryFields)
+      ? { category: '' }
+      : { category: categoryFields?.fields?.category || '' }
 
-    const category = chronicleEntry.fields.category?.fields.category || ''
+    const additionalInformation = isUnresolvedLink(additionalInformationFields)
+      ? null
+      : parseContentfulInfo(additionalInformationFields)
 
     return {
       lead: chronicleEntry.fields.lead || '',
@@ -130,15 +149,8 @@ export async function parseContentfulBlogPost(
       quote: chronicleEntry.fields.quote || '',
       date: chronicleEntry.fields.date || '',
       alt: chronicleEntry.fields.alt || '',
-      category: category,
-      additionalInformation: additionalInformation || {
-        officialSummary: '',
-        sinisterBookInsights: '',
-        notesOnTranslation: '',
-        publicationDate: '',
-        pages: 0,
-        isbn: '',
-      },
+      category,
+      additionalInformation,
     }
   } catch (error) {
     console.error('Error parsing contentful blog post:', error)
@@ -153,25 +165,25 @@ export async function fetchChronicles({
   preview,
 }: FetchChroniclesOptions): Promise<Chronicle[]> {
   try {
-    const contentful = contentfulClient({ preview });
+    const contentful = contentfulClient({ preview })
     const chronicleResult = await contentful.getEntries<TypeChronicleSkeleton>({
       content_type: 'chronicle',
       include: 2,
       order: ['-sys.createdAt'],
-    });
+    })
 
     const chroniclePromises = chronicleResult.items.map(
       async (chronicleEntry) => {
-        const chronicle = await parseContentfulBlogPost(chronicleEntry);
-        return chronicle as Chronicle;
+        const chronicle = await parseContentfulBlogPost(chronicleEntry)
+        return chronicle as Chronicle
       }
-    );
+    )
 
-    const chronicles = await Promise.all(chroniclePromises);
-    return chronicles;
+    const chronicles = await Promise.all(chroniclePromises)
+    return chronicles
   } catch (error) {
-    console.error('Error fetching chronicles:', error);
-    throw error;
+    console.error('Error fetching chronicles:', error)
+    throw error
   }
 }
 
