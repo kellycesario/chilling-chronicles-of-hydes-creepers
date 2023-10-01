@@ -5,7 +5,7 @@ import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
 import { CardChronicle } from '@/components/molecules/CardChronicle'
 import { SearchInput } from '@/components/molecules/SearchInput'
-import { Chronicle } from '@/contentful/chroniclePosts'
+import { Category, Chronicle } from '@/contentful/chroniclePosts'
 import { getProcessedPicture } from '@/utils/formatImage'
 import { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
@@ -27,54 +27,81 @@ type CardsWrapperProps = {
       | 'headline'
       | 'category'
     >)[]
+  category?: Category | Category[]
+  selectedCategory?: string
+  setSelectedCategory?: (category: string) => void
 }
-
 export const CardsWrapper = ({
   numCardsMobile,
   numCardsTablet,
   numCardsDesktop,
   showButton,
   chronicle,
+  selectedCategory,
 }: CardsWrapperProps) => {
   const isMobile = useMediaQuery({ maxWidth: 743 })
   const isTablet = useMediaQuery({ maxWidth: 1199 })
   const isDesktop = useMediaQuery({ minWidth: 1200 })
-
-  const numCards = isMobile
-    ? numCardsMobile
-    : isTablet
-    ? numCardsTablet
-    : numCardsDesktop
 
   const [searchText, setSearchText] = useState('')
   const [filteredChronicles, setFilteredChronicles] = useState<
     Partial<Chronicle>[]
   >([])
 
-  useEffect(() => {
-    handleSearch(searchText)
-  }, [searchText])
-
   const handleSearch = (query: string) => {
     setSearchText(query)
-
-    if (!query) {
-      setFilteredChronicles(chronicle || [])
-      return
-    }
-
-    const lowerCaseQuery = query.toLowerCase()
-    const filtered = (chronicle || []).filter(
-      (item) =>
-        item.lead.toLowerCase().includes(lowerCaseQuery) ||
-        item.reviewer.toLowerCase().includes(lowerCaseQuery) ||
-        item.description.toLowerCase().includes(lowerCaseQuery) ||
-        item.headline.toLowerCase().includes(lowerCaseQuery)
-    )
-
-    setFilteredChronicles(filtered)
   }
 
+  useEffect(() => {
+    let filtered: Partial<Chronicle>[] = chronicle ? [...chronicle] : []
+
+    if (searchText) {
+      const lowerCaseQuery = searchText.toLowerCase()
+      filtered = filtered.filter((item) => {
+        let category = ''
+        if (
+          typeof item.category === 'string' ||
+          item.category instanceof String
+        ) {
+          category = item.category.toString().toLowerCase()
+        }
+
+        const lead = item.lead || ''
+        const reviewer = item.reviewer || ''
+        const description = item.description || ''
+        const headline = item.headline || ''
+
+        return (
+          lead.toLowerCase().includes(lowerCaseQuery) ||
+          reviewer.toLowerCase().includes(lowerCaseQuery) ||
+          description.toLowerCase().includes(lowerCaseQuery) ||
+          headline.toLowerCase().includes(lowerCaseQuery) ||
+          category.includes(lowerCaseQuery)
+        )
+      })
+    }
+
+    setFilteredChronicles(filtered)
+  }, [searchText, selectedCategory, chronicle])
+
+  const renderedCards = filteredChronicles
+    ?.filter((item) => !selectedCategory || item.category === selectedCategory)
+    .map((item, index) => {
+      const processedPicture = getProcessedPicture(item.picture)
+
+      return (
+        <CardChronicle
+          key={index}
+          reviewer={item.reviewer}
+          picture={processedPicture}
+          size={isDesktop && index === 0 ? 'large' : ''}
+          lead={item.lead}
+          headline={item.headline}
+          slug={item.slug}
+          category={item.category}
+        />
+      )
+    })
   return (
     <section className={styles.cards}>
       <article className={styles.cards__text}>
@@ -97,40 +124,30 @@ export const CardsWrapper = ({
 
       <div className={styles.cards__container}>
         <article className={styles.cards__initialItems}>
-          {(searchText === '' ? chronicle : filteredChronicles)
-            .slice(0, 2)
-            .map((item, index) => {
-              const processedPicture = getProcessedPicture(item.picture)
-              return (
-                <CardChronicle
-                  key={index}
-                  reviewer={item.reviewer}
-                  picture={processedPicture}
-                  size={isDesktop && index === 0 ? 'large' : ''}
-                  lead={item.lead}
-                  headline={item.headline}
-                  slug={item.slug}
-                />
-              )
-            })}
+          {renderedCards &&
+            renderedCards
+              .slice(0, 2)
+              .filter(
+                (card) =>
+                  !selectedCategory || card.props.category === selectedCategory
+              )}
         </article>
 
         <article className={styles.cards__additionalItems}>
-          {(searchText === '' ? chronicle : filteredChronicles)
-            .slice(2, numCards)
-            .map((item, index) => {
-              const processedPicture = getProcessedPicture(item.picture)
-              return (
-                <CardChronicle
-                  key={index}
-                  reviewer={item.reviewer}
-                  picture={processedPicture}
-                  lead={item.lead}
-                  headline={item.headline}
-                  slug={item.slug}
-                />
+          {renderedCards &&
+            renderedCards
+              .slice(
+                2,
+                isMobile
+                  ? numCardsMobile
+                  : isTablet
+                  ? numCardsTablet
+                  : numCardsDesktop
               )
-            })}
+              .filter(
+                (card) =>
+                  !selectedCategory || card.props.category === selectedCategory
+              )}
         </article>
 
         <article className={styles.cards__interaction}>
