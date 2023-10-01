@@ -7,10 +7,13 @@
   border: 2px solid $purple;
   background-color: $white;
   @include text();
-  
-  &:focus-visible, &:checked, &:focus, &:focus-within {
+
+  &:focus-visible,
+  &:checked,
+  &:focus,
+  &:focus-within {
     outline: 3px solid purple;
-    border: none
+    border: none;
   }
 
   &__label {
@@ -24,5 +27,11 @@
   &__field {
     width: 100%;
     outline: none;
+  }
+
+  &__validation {
+    display: flex;
+    font-weight: 700;
+    color: $light-purple;
   }
 }
