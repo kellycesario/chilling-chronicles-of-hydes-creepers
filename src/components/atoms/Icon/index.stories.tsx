@@ -30,6 +30,7 @@ export default {
         'twitter',
         'discord',
         'linkedin',
+        'github',
         'at-sign',
         'fire',
         'plus',

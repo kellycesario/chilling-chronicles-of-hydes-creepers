@@ -9,8 +9,8 @@ export default {
     layout: 'padded',
   },
   args: {
-    question: 'ISBN',
-    answer:
+    title: 'ISBN',
+    content:
       'R341-IIT1',
   },
   decorators: [

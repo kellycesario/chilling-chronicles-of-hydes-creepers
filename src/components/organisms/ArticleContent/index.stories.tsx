@@ -9,8 +9,8 @@ export default {
     layout: '',
   },
   args: {
-    reviewer: 'Kelly',
-    date: '13 de Dezembro',
+    reviewer: 'Daisy',
+    date: 17 / 11,
     alt: 'string',
     lead: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     picture:
@@ -28,6 +28,48 @@ export default {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at.',
     fourthParagraph:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum dictum elit, nec interdum neque ultricies at.',
+  },
+  argTypes: {
+    category: {
+      table: {
+        disable: true,
+      },
+    },
+    date: {
+      table: {
+        disable: true,
+      },
+    },
+    alt: {
+      table: {
+        disable: true,
+      },
+    },
+    picture: {
+      table: {
+        disable: true,
+      },
+    },
+    firstParagraph: {
+      table: {
+        disable: true,
+      },
+    },
+    secondParagraph: {
+      table: {
+        disable: true,
+      },
+    },
+    thirdParagraph: {
+      table: {
+        disable: true,
+      },
+    },
+    fourthParagraph: {
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => {

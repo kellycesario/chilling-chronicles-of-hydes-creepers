@@ -8,11 +8,11 @@ export default {
     layout: 'centered',
   },
   args: {
-    name: 'Daisy Jones',
-    date: 'December 13th',
+    reviewer: 'Daisy Jones',
+    date: 11/11,
   },
   argTypes: {
-    name: {
+    reviewer: {
       table: {
         disable: true,
       },

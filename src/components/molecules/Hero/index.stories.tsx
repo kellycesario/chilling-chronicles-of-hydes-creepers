@@ -5,6 +5,9 @@ export default {
   component: Hero,
   title: 'Molecules/Hero',
   tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
   args: {
     image: '/hero-homescreen.png',
   },

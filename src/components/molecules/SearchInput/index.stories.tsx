@@ -5,6 +5,13 @@ export default {
   component: SearchInput,
   title: 'Molecules/Search Input',
   tags: ['autodocs'],
+  argTypes: {
+    onSearch: {
+      table: {
+        disable: true,
+      },
+    },
+  },
   decorators: [
     (Story) => {
       return (

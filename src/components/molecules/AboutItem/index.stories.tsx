@@ -11,7 +11,14 @@ export default {
   args: {
     icon: 'skull',
     topic: 'Twenty Tales of Terror',
-    subtopic: 'Feast your eyes on the exclusive reviews of the infamous Edgar J Hyde',
+    subtopic:
+      'Feast your eyes on the exclusive reviews of the infamous Edgar J Hyde',
+  },
+  argTypes: {
+    icon: {
+      control: { type: 'select' },
+      options: ['fire', 'alien', 'skull', 'cross', 'books', 'ghost'],
+    },
   },
   decorators: [
     (Story) => {

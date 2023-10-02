@@ -5,7 +5,15 @@ export default {
   component: Header,
   title: 'Molecules/Header',
   tags: ['autodocs'],
-  parameters: {
+  args: {
+    spacing: 'withPadding',
+  },
+  argTypes: {
+    spacing: {
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => {

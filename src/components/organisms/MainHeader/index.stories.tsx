@@ -8,6 +8,9 @@ export default {
   args: {
     image: '/hero-homescreen.png',
   },
+  parameters: {
+    layout: 'fullscreen'
+  },
   argTypes: {
     image: {
       table: {

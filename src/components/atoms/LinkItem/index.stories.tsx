@@ -11,11 +11,20 @@ export default {
   args: {
     children: 'This is a link',
     href: '/',
-    hasIcon: false,
     icon: 'books',
   },
   argTypes: {
     href: {
+      table: {
+        disable: true,
+      },
+    },
+    hasIcon: {
+      table: {
+        disable: true,
+      },
+    },
+    flexDirection: {
       table: {
         disable: true,
       },

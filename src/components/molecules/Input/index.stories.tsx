@@ -29,6 +29,31 @@ const input = {
         disable: true,
       },
     },
+    value: {
+      table: {
+        disable: true,
+      },
+    },
+    error: {
+      table: {
+        disable: true,
+      },
+    },
+    validation: {
+      table: {
+        disable: true,
+      },
+    },
+    onChange: {
+      table: {
+        disable: true,
+      },
+    },
+    onKeyDown: {
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => {

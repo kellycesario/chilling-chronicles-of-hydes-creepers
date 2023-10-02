@@ -6,6 +6,7 @@ const button = {
   title: 'Atoms/Button',
   component: Button,
   tags: ['autodocs'],
+
   argTypes: {
     className: {
       table: {
@@ -23,6 +24,11 @@ const button = {
       },
     },
     target: {
+      table: {
+        disable: true,
+      },
+    },
+    type: {
       table: {
         disable: true,
       },

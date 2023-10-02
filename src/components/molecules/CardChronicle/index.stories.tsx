@@ -14,7 +14,7 @@ export default {
     picture:
       'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_42/1792285/pumpkin-shortage-te-main-211022.jpg',
     size: '',
-    description: 'This is a very nice subtitle for this article in question',
+    headline: 'Article headline',
     lead: 'Article title',
   },
   decorators: [
