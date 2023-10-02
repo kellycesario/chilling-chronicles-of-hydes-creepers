@@ -10,6 +10,7 @@ type LinkItemProps = {
   hasIcon?: boolean
   icon?: string
   flexDirection?: string
+  role: string
 }
 
 export const LinkItem = ({
@@ -18,6 +19,7 @@ export const LinkItem = ({
   hasIcon,
   icon,
   flexDirection,
+  role
 }: LinkItemProps) => {
   const pathname = usePathname()
 
@@ -30,7 +32,7 @@ export const LinkItem = ({
     .join(' ')
 
   return (
-    <li className={classList}>
+    <li className={classList} role={role}>
       {hasIcon ? (
         <a
           href={href}

@@ -29,6 +29,11 @@ export default {
         disable: true,
       },
     },
+    role: {
+      table: {
+        disable: true,
+      },
+    },
     icon: {
       control: { type: 'select' },
       options: ['linkedin', 'twitter', 'discord'],
