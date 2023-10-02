@@ -85,7 +85,7 @@ export const Input = forwardRef(
           </span>
         )}
 
-        <div className={styles.input} aria-hidden='true'>
+        <div className={styles.input}>
           <Icon icon={errorIcon} fill={errorIconColor} />
           {isTextarea ? (
             <textarea
