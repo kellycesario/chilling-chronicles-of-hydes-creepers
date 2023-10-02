@@ -10,7 +10,7 @@ type LinkItemProps = {
   hasIcon?: boolean
   icon?: string
   flexDirection?: string
-  role: string
+  role?: string
 }
 
 export const LinkItem = ({
