@@ -55,6 +55,7 @@ export const Header = ({ spacing }: HeaderProps) => {
               children={item.children}
               href={item.href}
               flexDirection='end'
+              role='menuitem'
             />
           ))}
         </ul>
