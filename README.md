@@ -16,12 +16,13 @@ If you need more information about integrating with Contentful, visit the [READM
 
 ## Technologies
 
-- Figma
+- Design System in [Figma](https://www.figma.com/community/file/898410101241932232)
 - Next.js (App Router)
 - React
 - TypeScript
 - SCSS (modules)
 - Contentful
+- [Vercel](https://chilling-chronicles-of-hydes-creepers.vercel.app/)
 - Storybook
 - Hotjar
 - Google Analytics
