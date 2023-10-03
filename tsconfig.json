@@ -14,7 +14,7 @@
       "@/data/*": [
         "data/*"
       ],
-      "@/contentful/*" : [
+      "@/contentful/*": [
         "contentful/*"
       ]
     },
@@ -46,7 +46,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "src/utils/gtag.ts"
   ],
   "exclude": [
     "node_modules"
