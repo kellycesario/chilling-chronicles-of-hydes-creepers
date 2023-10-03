@@ -43,6 +43,18 @@ export default function RootLayout({
 `,
         }}
       />
+      <Script
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-S33WWE2401');
+`,
+        }}
+      />
     </html>
   )
 }
