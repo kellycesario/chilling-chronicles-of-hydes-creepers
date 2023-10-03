@@ -1,8 +1,9 @@
 .info {
   &__container {
     display: flex;
+    align-items: center;
     gap: 1rem;
-    border: 0.1rem solid $dark-gray;
+    border: 0.1rem solid $light-purple;
     padding: 1rem;
   }
 }

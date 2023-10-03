@@ -1,3 +1,4 @@
+import { Icon } from '@/components/atoms/Icon'
 import { Text } from '@/components/atoms/Text'
 import { formatDate } from '@/utils/formatDate'
 import styles from './styles.module.scss'
@@ -13,11 +14,13 @@ export const PublicationInfo = ({ reviewer, date }: PublicationInfoProps) => {
   return (
     <article className={styles.info}>
       <div className={styles.info__container}>
-        <Text align='left' weight='600' children='Posted by:' />
+        <Icon icon='ghost' fill='#765ba8' />
+        <Text align='left' weight='600' children='Cursed by:' />
         <Text align='left' children={reviewer} />
       </div>
       <div className={styles.info__container}>
-        <Text align='left' weight='600' children='Date of publication:' />
+        <Icon icon='cross' fill='#765ba8' />
+        <Text align='left' weight='600' children='Chilling debut:' />
         <Text align='left' children={formattedDate} />
       </div>
     </article>
