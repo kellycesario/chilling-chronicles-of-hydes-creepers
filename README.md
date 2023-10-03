@@ -30,4 +30,4 @@ If you need more information about integrating with Contentful, visit the [READM
 
 ## Additional References
 
-Images in the hero section and the logo belong to [Zazuly Aziz](https://www.figma.com/community/file/898410101241932232)
+Images in the hero section and the logo belong to [Zazuly Aziz](https://www.figma.com/community/file/898410101241932232).
