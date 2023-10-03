@@ -26,6 +26,7 @@ If you need more information about integrating with Contentful, visit the [READM
 - Hotjar
 - Google Analytics
 - Progressive Web App (PWA)
+- Vercel
 
 ## Additional References
 
