@@ -8,7 +8,7 @@ To run the project:
 2. Obtain an API key from Contentful by creating an account and setting up the necessary content types (chronicle, additionalInformation, category)
 3. Fill your `.env` file with the Contentful API keys
 
-## Usage
+## About the Project
 
 This project showcases the integration of Next.js 13 (App Router) with Contentful, creating a **`Chilling Blog`** featuring authentic reviews of 20 books by Edgar J Hyde (Creepers saga). This application, in a way, combines the author's previous background in Linguistics with the ongoing studies in Systems Analysis and Development.
 
