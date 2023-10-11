@@ -26,6 +26,7 @@ type ArticleContentProps = {
   thirdParagraph: string
   fourthParagraph: string
   category?: string
+  slug: string
 }
 
 export const ArticleContent = ({
@@ -42,6 +43,7 @@ export const ArticleContent = ({
   secondParagraph,
   thirdParagraph,
   fourthParagraph,
+  slug
 }: ArticleContentProps) => {
   return (
     <section className={styles.content}>
@@ -65,6 +67,7 @@ export const ArticleContent = ({
         lead={lead}
         picture={picture}
         description={description}
+        slug={slug}
       />
 
       <Text align='left' children={firstParagraph} />

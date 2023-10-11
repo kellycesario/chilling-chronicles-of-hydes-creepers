@@ -47,6 +47,7 @@ async function Article({ params }: ChronicleProps) {
         secondParagraph={chronicle.secondParagraph}
         thirdParagraph={chronicle.thirdParagraph}
         fourthParagraph={chronicle.fourthParagraph}
+        slug={chronicle.slug}
       />
       <Accordion
         officialSummary={chronicle.additionalInformation.officialSummary}

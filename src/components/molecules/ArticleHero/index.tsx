@@ -9,6 +9,7 @@ type ArticleHeroProps = {
   lead: string
   picture: string
   description: string
+  slug: string
 }
 
 export const ArticleHero = ({
@@ -16,6 +17,7 @@ export const ArticleHero = ({
   lead,
   picture,
   description,
+  slug
 }: ArticleHeroProps) => {
   return (
     <article className={styles.hero}>
@@ -31,7 +33,7 @@ export const ArticleHero = ({
       </div>
       <div className={styles.hero__container}>
         <Text align='left' children={description} />
-        <Share />
+        <Share slug={slug}/>
       </div>
     </article>
   )
