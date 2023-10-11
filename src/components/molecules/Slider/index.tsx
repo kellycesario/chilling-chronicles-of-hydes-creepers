@@ -20,7 +20,7 @@ export const SliderComponent = () => {
       <div className={styles.slider__container}>
         {hallmarks.map((item) => (
           <div key={item.id} className={styles.slider__item}>
-            {activeSlide === item.id && <img src='/divider.png' alt=''/>}
+            {activeSlide === item.id && <img src='/divider.png' alt='' className={styles.slider__divider}/>}
             <button
               className={`${styles.slider__button} ${
                 activeSlide === item.id ? styles.slider__buttonActive : ''
