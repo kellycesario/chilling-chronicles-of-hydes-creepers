@@ -35,9 +35,10 @@ export default {
       },
     },
     icon: {
-      control: { type: 'select' },
-      options: ['linkedin', 'twitter', 'discord'],
-    }
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => {

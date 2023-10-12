@@ -7,5 +7,12 @@ export default {
   parameters: {
     layout: '',
   },
+  argTypes: {
+    onClose: {
+      table: {
+        disable: true,
+      },
+    },
+  }
 }
 export const Default = {}

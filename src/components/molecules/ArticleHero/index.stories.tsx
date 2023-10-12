@@ -36,6 +36,11 @@ export default {
         disable: true,
       },
     },
+    slug: {
+      table: {
+        disable: true,
+      },
+    },
   },
 }
 export const Default = {}

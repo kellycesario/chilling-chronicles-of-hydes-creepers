@@ -70,6 +70,11 @@ export default {
         disable: true,
       },
     },
+    slug: {
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => {
