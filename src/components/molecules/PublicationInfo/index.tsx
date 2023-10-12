@@ -20,7 +20,7 @@ export const PublicationInfo = ({ reviewer, date }: PublicationInfoProps) => {
       </div>
       <div className={styles.info__container}>
         <Icon icon='cross' fill='#765ba8' />
-        <Text align='left' weight='600' children='Chilling debut:' />
+        <Text align='left' weight='600' children='Eerie start:' />
         <Text align='left' children={formattedDate} />
       </div>
     </article>
