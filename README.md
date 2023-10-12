@@ -16,18 +16,18 @@ If you need more information about integrating with Contentful, visit the [READM
 
 ## Technologies
 
-- Design System in [Figma](https://www.figma.com/community/file/898410101241932232)
+- Design System in [Figma](https://www.figma.com/file/IkyUa6fN7Bhb4dX2ieMz59/Chilling-Chronicles-of-Hyde's-Creepers-(public)?type=design&node-id=901%3A1317&mode=dev)
 - Next.js (App Router)
 - React
 - TypeScript
 - SCSS (modules)
 - Contentful
 - [Vercel](https://chilling-chronicles-of-hydes-creepers.vercel.app/)
-- Storybook
+- [Storybook](https://kellycesario.github.io/chilling-chronicles-of-hydes-creepers/)
 - Hotjar
 - Google Analytics
 - Progressive Web App (PWA)
 
 ## Additional References
 
-Images in the hero section and the logo belong to [Zazuly Aziz](https://www.figma.com/community/file/898410101241932232).
+Images in Logo, Hero and Main Header belong to [Zazuly Aziz](https://www.figma.com/community/file/898410101241932232).
