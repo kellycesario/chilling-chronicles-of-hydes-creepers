@@ -1,6 +1,7 @@
 import { Sprites } from '@/components/ions/Sprites'
 import { Footer } from '@/components/organisms/Footer'
 import '@/styles/main.scss'
+import { GoogleAds } from '@/utils/GoogleAds'
 import { GoogleAnalytics } from '@/utils/GoogleAnalytics'
 import { Hotjar } from '@/utils/Hotjar'
 import type { Metadata } from 'next'
@@ -28,8 +29,9 @@ export default function RootLayout({
         {children}
         <Sprites />
         <Footer />
-        <GoogleAnalytics />
         <Hotjar />
+        <GoogleAnalytics />
+        <GoogleAds />
       </body>
     </html>
   )
