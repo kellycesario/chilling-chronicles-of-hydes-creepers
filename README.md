@@ -2,6 +2,13 @@
 
 Welcome to our review blog, delving into the enigmatic world of 'Creepers' by the infamous Edgar J Hyde. This narrative takes readers on a chilling journey, where suspense and darkness intertwine, keeping you on the edge of your seat. The skillfully crafted plot unveils unsettling secrets and delves deep into the human psyche, showcasing Hyde's mastery in the horror and suspense genre.
 
+## Table of Contents
+
+* [Installation](#installation)
+* [About the Project](#about-the-project)
+* [Technologies](#technologies)
+* [Additional References](#additional-references)
+
 ## Installation
 
 To run the project:
@@ -36,6 +43,6 @@ If you need more information about integrating with Contentful, visit the [READM
 
 ## Additional References
 
-Images in Logo, Hero and Main Header belong to [Zazuly Aziz](https://www.figma.com/community/file/898410101241932232).
+Images in  **`Logo`**, **`Hero`** and **`Main Header`** belong to [Zazuly Aziz](https://www.figma.com/community/file/898410101241932232).
 
 The four **`PWA icons`** belong to [Flaticon Ghost Icons](https://www.flaticon.com/free-icons/ghost).
