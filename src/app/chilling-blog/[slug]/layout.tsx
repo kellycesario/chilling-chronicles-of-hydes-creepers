@@ -1,4 +1,4 @@
-import { fetchChronicle } from '@/contentful/chroniclePosts'
+import { fetchChronicle } from '@/services/contentful/chroniclePosts'
 import { Metadata, ResolvingMetadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
