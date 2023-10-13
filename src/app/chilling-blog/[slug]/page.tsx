@@ -1,6 +1,6 @@
 import { Accordion } from '@/components/organisms/Accordion'
 import { ArticleContent } from '@/components/organisms/ArticleContent'
-import { fetchChronicle, fetchChronicles } from '@/contentful/chroniclePosts'
+import { fetchChronicle, fetchChronicles } from '@/services/contentful/chroniclePosts'
 import { getProcessedPicture } from '@/utils/formatImage'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'

@@ -1,18 +1,31 @@
 # Chilling Chronicles of Hyde's Creepers
 
+Welcome to our review blog, delving into the enigmatic world of 'Creepers' by the infamous Edgar J Hyde. This narrative takes readers on a chilling journey, where suspense and darkness intertwine, keeping you on the edge of your seat. The skillfully crafted plot unveils unsettling secrets and delves deep into the human psyche, showcasing Hyde's mastery in the horror and suspense genre.
+
+## Table of Contents
+
+* [Installation](#installation)
+* [About the Project](#about-the-project)
+* [Technologies](#technologies)
+* [Additional References](#additional-references)
+
 ## Installation
 
 To run the project:
 
-1. Run `pnpm dev` in the main directory
+1. After installing the project with `pnpm install`, run `pnpm dev` in the main directory
 2. Obtain an API key from Contentful by creating an account and setting up the necessary content types (chronicle, additionalInformation, category)
-3. Fill your `.env` file with the Contentful API keys
+3. Fill your `.env` file with the necessary keys (don't forget to check the .env.example).
 
 ## About the Project
 
 This project showcases the integration of Next.js 13 (App Router) with Contentful, creating a **`Chilling Blog`** featuring authentic reviews of 20 books by Edgar J Hyde (Creepers saga). This application, in a way, combines the author's previous background in Linguistics with the ongoing studies in Systems Analysis and Development.
 
 If you need more information about integrating with Contentful, visit the [README](/src/contentful/README.md) in the `'src/contentful'` directory.
+
+## Project Status
+
+![Badge](https://img.shields.io/badge/Chilling_Blog-Done_👻-purple?style=for-the-badge&logo=ghost)
 
 ## Technologies
 
@@ -30,4 +43,6 @@ If you need more information about integrating with Contentful, visit the [READM
 
 ## Additional References
 
-Images in Logo, Hero and Main Header belong to [Zazuly Aziz](https://www.figma.com/community/file/898410101241932232).
+Images in  **`Logo`**, **`Hero`** and **`Main Header`** belong to [Zazuly Aziz](https://www.figma.com/community/file/898410101241932232).
+
+The four **`PWA icons`** belong to [Flaticon Ghost Icons](https://www.flaticon.com/free-icons/ghost).

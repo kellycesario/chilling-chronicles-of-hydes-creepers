@@ -12,7 +12,7 @@ export default {
     icon: 'skull',
     topic: 'Twenty Tales of Terror',
     subtopic:
-      'Feast your eyes on the exclusive reviews of the infamous Edgar J Hyde',
+      "Feast your eyes on the exclusive reviews of the infamous Edgar J Hyde 'Creepers'",
   },
   argTypes: {
     icon: {

@@ -14,8 +14,11 @@
       "@/data/*": [
         "data/*"
       ],
-      "@/contentful/*": [
-        "contentful/*"
+      "@/services/*": [
+        "services/*"
+      ],
+      "@/services/contentful/*": [
+        "services/contentful/*"
       ]
     },
     "lib": [

@@ -2,7 +2,7 @@ import { CardsWrapper } from '@/components/organisms/CardsWrapper'
 import { Contact } from '@/components/organisms/Contact'
 import { Hallmarks } from '@/components/organisms/Hallmarks'
 import { MainHeader } from '@/components/organisms/MainHeader'
-import { fetchChronicles } from '@/contentful/chroniclePosts'
+import { fetchChronicles } from '@/services/contentful/chroniclePosts'
 import { draftMode } from 'next/headers'
 
 interface ChronicleParams {

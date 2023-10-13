@@ -1,7 +1,7 @@
 import { BannerQuote } from '@/components/organisms/BannerQuote'
 import { Contact } from '@/components/organisms/Contact'
 import { MainHeader } from '@/components/organisms/MainHeader'
-import { fetchChronicles } from '@/contentful/chroniclePosts'
+import { fetchChronicles } from '@/services/contentful/chroniclePosts'
 import { draftMode } from 'next/headers'
 
 import { CardsWrapper } from '@/components/organisms/CardsWrapper'
