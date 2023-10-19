@@ -1,3 +1,4 @@
+import { Advertising } from '@/components/organisms/Advertising'
 import { CardsWrapper } from '@/components/organisms/CardsWrapper'
 import { Contact } from '@/components/organisms/Contact'
 import { Hallmarks } from '@/components/organisms/Hallmarks'
@@ -33,6 +34,7 @@ async function Home() {
         chronicle={chronicles}
       />
       <Contact image='/contact-bg.png' />
+      <Advertising />
       <Hallmarks image='/hallmarks-bg.png' location='home' />
     </main>
   )

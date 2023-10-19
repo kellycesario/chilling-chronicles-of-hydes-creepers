@@ -5,6 +5,7 @@ import { fetchChronicles } from '@/services/contentful/chroniclePosts'
 import { draftMode } from 'next/headers'
 
 import { CardsWrapper } from '@/components/organisms/CardsWrapper'
+import { Advertising } from '@/components/organisms/Advertising'
 
 interface ChronicleParams {
   slug: string
@@ -34,6 +35,7 @@ async function Blog() {
         chronicle={chronicles}
       />
       <BannerQuote image='/bg.png' />
+      <Advertising />
       <Contact image='/contact-bg.png' />
     </main>
   )
