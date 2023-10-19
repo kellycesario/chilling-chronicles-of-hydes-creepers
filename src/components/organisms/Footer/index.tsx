@@ -10,7 +10,12 @@ export const Footer = () => {
       <nav>
         <ul className={styles.footer__list}>
           {navigation.map((item, index) => (
-            <LinkItem key={index} children={item.children} href={item.href} flexDirection='center'/>
+            <LinkItem
+              key={index}
+              children={item.children}
+              href={item.href}
+              flexDirection='center'
+            />
           ))}
         </ul>
       </nav>
@@ -19,6 +24,14 @@ export const Footer = () => {
         <Text align='left' children='Made with' color='black' />
         <Icon icon='ghost' fill='#765BA8' />
         <Text align='left' children='for chilling people' color='black' />
+      </div>
+
+      <div className={styles.footer__copyright}>
+        <Text
+          align='center'
+          children="This website is non-profit and is not affiliated with the author Edgar J. Hyde, nor does it claim any rights to the 'Creepers' saga"
+          size='small'
+        />
       </div>
     </footer>
   )

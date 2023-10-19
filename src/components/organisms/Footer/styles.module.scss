@@ -26,4 +26,9 @@
     align-items: center;
     gap: 0.4rem;
   }
+
+  &__copyright {
+    @extend .footer__credits;
+    padding-inline: 2rem;
+  }
 }
