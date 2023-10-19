@@ -71,6 +71,22 @@
   }
 }
 
+@mixin size() {
+  &--small {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 160%;
+
+    @include screen-size('tablet') {
+      font-size: 1.1rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 1.2rem;
+    }
+  }
+}
+
 @mixin layout() {
   background: linear-gradient(180deg, #c4c2ff 0%, #e5e5e5 100%);
 }

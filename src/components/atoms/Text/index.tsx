@@ -5,13 +5,15 @@ type TextProps = {
   children: string
   color?: string
   weight?: string
+  size?:string
 }
-export const Text = ({ align, children, color, weight }: TextProps) => {
+export const Text = ({ align, children, color, weight, size }: TextProps) => {
   const classList = [
     styles[`text`],
     styles[`text--${align}`],
     styles[`text--${color}`],
     styles[`text--${weight}`],
+    styles[`text--${size}`],
   ].join(' ')
 
   return <p className={classList}>{children}</p>
