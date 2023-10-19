@@ -34,7 +34,11 @@ async function Home() {
         chronicle={chronicles}
       />
       <Contact image='/contact-bg.png' />
-      <Advertising />
+      <Advertising
+        data-ad-layout='in-article'
+        data-ad-format='fluid'
+        data-ad-slot='6765860573'
+      />
       <Hallmarks image='/hallmarks-bg.png' location='home' />
     </main>
   )

@@ -1,7 +1,10 @@
 import { Accordion } from '@/components/organisms/Accordion'
 import { Advertising } from '@/components/organisms/Advertising'
 import { ArticleContent } from '@/components/organisms/ArticleContent'
-import { fetchChronicle, fetchChronicles } from '@/services/contentful/chroniclePosts'
+import {
+  fetchChronicle,
+  fetchChronicles,
+} from '@/services/contentful/chroniclePosts'
 import { getProcessedPicture } from '@/utils/formatImage'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
@@ -50,7 +53,11 @@ async function Article({ params }: ChronicleProps) {
         fourthParagraph={chronicle.fourthParagraph}
         slug={chronicle.slug}
       />
-      <Advertising />
+      <Advertising
+        data-ad-layout='in-article'
+        data-ad-format='fluid'
+        data-ad-slot='6765860573'
+      />
       <Accordion
         officialSummary={chronicle.additionalInformation.officialSummary}
         sinisterBookInsights={

@@ -4,8 +4,8 @@ import { MainHeader } from '@/components/organisms/MainHeader'
 import { fetchChronicles } from '@/services/contentful/chroniclePosts'
 import { draftMode } from 'next/headers'
 
-import { CardsWrapper } from '@/components/organisms/CardsWrapper'
 import { Advertising } from '@/components/organisms/Advertising'
+import { CardsWrapper } from '@/components/organisms/CardsWrapper'
 
 interface ChronicleParams {
   slug: string
@@ -35,7 +35,11 @@ async function Blog() {
         chronicle={chronicles}
       />
       <BannerQuote image='/bg.png' />
-      <Advertising />
+      <Advertising
+        data-ad-layout='in-article'
+        data-ad-format='fluid'
+        data-ad-slot='6765860573'
+      />
       <Contact image='/contact-bg.png' />
     </main>
   )
