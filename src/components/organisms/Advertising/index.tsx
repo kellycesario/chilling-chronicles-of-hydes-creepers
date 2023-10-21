@@ -7,10 +7,10 @@ declare global {
   }
 }
 
-export const Advertising = (props) => {
+export const Advertising = () => {
   useEffect(() => {
     try {
-      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
     } catch (err) {
       console.log(err)
     }
@@ -29,7 +29,6 @@ export const Advertising = (props) => {
       // data-ad-layout='in-article'
       // data-ad-format='fluid'
       // data-ad-slot='6765860573'
-      {...props}
     />
   )
 }
