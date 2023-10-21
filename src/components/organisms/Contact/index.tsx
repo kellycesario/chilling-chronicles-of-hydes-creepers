@@ -4,43 +4,39 @@ import { Button } from '@/components/atoms/Button'
 import { Headings } from '@/components/atoms/Headings'
 import { Text } from '@/components/atoms/Text'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useWindowSize } from 'react-use'
 import styles from './styles.module.scss'
+import { useEffect, useState } from 'react';
 
 type ContactProps = {
   image: string
 }
 
 export const Contact = ({ image }: ContactProps) => {
-  const [windowWidth, setWindowWidth] = useState<number>(0)
+  const { width: windowWidth } = useWindowSize()
+  const [headingsColor, setHeadingsColor] = useState('');
+  const [buttonLevel, setButtonLevel] = useState('');
+  const [backgroundStyle, setBackgroundStyle] = useState({});
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
+    if (windowWidth < 744) {
+      setHeadingsColor('white');
+      setButtonLevel('tertiary');
+      setBackgroundStyle({
+        backgroundImage: `url(${image})`,
+      });
+    } else {
+      setHeadingsColor('black');
+      setButtonLevel('secondary');
+      setBackgroundStyle({});
     }
-
-    if (typeof window !== 'undefined') {
-      setWindowWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize)
-
-      return () => {
-        window.removeEventListener('resize', handleResize)
-      }
-    }
-  }, [])
-
-  const background = {
-    backgroundImage: `url(${image})`,
-  }
-
-  const headingsColor = windowWidth < 744 ? 'white' : 'black'
-  const buttonLevel = windowWidth < 744 ? 'tertiary' : 'secondary'
+  }, [windowWidth, image]);
 
   return (
     <section className={styles.contact}>
       <article
-        style={windowWidth < 744 ? background : {}}
         className={styles.contact__container}
+        style={backgroundStyle}
       >
         <Headings
           align='left'

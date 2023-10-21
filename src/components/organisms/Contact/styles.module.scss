@@ -7,6 +7,7 @@
     padding: 2.3rem;
     max-width: 144rem;
     margin: 0 auto;
+    background-image: none;
   }
 
   @include screen-size('desktop') {
@@ -20,6 +21,10 @@
     padding: 17rem 1.7rem 14rem;
     min-height: 55rem;
     background: center/cover no-repeat;
+
+    @include screen-size('tablet') {
+      background-image: none;
+    }
   }
 
   &__image {
