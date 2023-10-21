@@ -27,6 +27,7 @@
     "react-hook-form": "^7.46.1",
     "react-hotjar": "^6.1.0",
     "react-responsive": "^9.0.2",
+    "react-use": "^17.4.0",
     "typescript": "5.1.6"
   },
   "devDependencies": {
