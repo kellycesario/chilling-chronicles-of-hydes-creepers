@@ -29,7 +29,7 @@ export const Footer = () => {
       <div className={styles.footer__copyright}>
         <Text
           align='center'
-          children="This website is non-profit and is not affiliated with the author Edgar J. Hyde, nor does it claim any rights to the 'Creepers' saga"
+          children="This website is not affiliated with the author Edgar J. Hyde, nor does it claim any rights to the 'Creepers' saga"
           size='small'
         />
       </div>
