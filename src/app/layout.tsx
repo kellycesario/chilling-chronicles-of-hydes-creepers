@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     icon: '/favicon.png',
   },
   themeColor: '#765ba8',
+  other: {
+    'google-adsense-account': `ca-pub-.process--${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID} `,
+  },
 }
 
 export default function RootLayout({
