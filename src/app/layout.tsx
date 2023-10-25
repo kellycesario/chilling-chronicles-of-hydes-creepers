@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   themeColor: '#765ba8',
   other: {
-    'google-adsense-account': `ca-pub-.process--${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID} `,
+    'google-adsense-account': `ca-pub-${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID} `,
   },
 }
 
