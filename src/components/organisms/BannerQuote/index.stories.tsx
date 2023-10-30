@@ -6,7 +6,7 @@ export default {
   title: 'Organisms/BannerQuote',
   tags: ['autodocs'],
   args: {
-    image: '/bg.png',
+    image: 'https://wallpapers.com/images/hd/white-christmas-in-winter-82n7x2vx82r8cj9n.jpg',
   },
   argTypes: {
     image: {

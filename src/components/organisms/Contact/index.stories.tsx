@@ -6,7 +6,7 @@ export default {
   title: 'Organisms/Contact',
   tags: ['autodocs'],
   args: {
-    image: '/contact-bg.png',
+    image: 'https://amyscrypt.com/wp-content/uploads/2019/06/RockingChairFree.jpg',
   },
   argTypes: {
     image: {
