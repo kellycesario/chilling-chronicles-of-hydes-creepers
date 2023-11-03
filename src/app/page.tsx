@@ -33,6 +33,11 @@ async function Home() {
         showButton={true}
         chronicle={chronicles}
       />
+      <Advertising
+        data-ad-layout='in-article'
+        data-ad-format='fluid'
+        data-ad-slot='6765860573'
+      />
       <Contact image='/contact-bg.png' />
       <Advertising
         data-ad-layout='in-article'

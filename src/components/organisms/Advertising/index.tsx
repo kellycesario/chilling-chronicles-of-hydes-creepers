@@ -24,6 +24,7 @@ export const Advertising = () => {
         minWidth: 300,
         minHeight: 250,
         overflow: 'hidden',
+        margin: '0 auto'
       }}
       data-ad-client={`ca-pub-${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}`}
       // data-ad-layout='in-article'

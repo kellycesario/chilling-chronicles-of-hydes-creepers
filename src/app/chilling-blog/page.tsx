@@ -34,6 +34,11 @@ async function Blog() {
         showButton={false}
         chronicle={chronicles}
       />
+      <Advertising
+        data-ad-layout='in-article'
+        data-ad-format='fluid'
+        data-ad-slot='6765860573'
+      />
       <BannerQuote image='/bg.png' />
       <Advertising
         data-ad-layout='in-article'
