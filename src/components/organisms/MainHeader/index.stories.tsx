@@ -6,7 +6,7 @@ export default {
   title: 'Organisms/MainHeader',
   tags: ['autodocs'],
   args: {
-    image: '/hero-blog.png',
+    image: 'https://i.ibb.co/2nZMYy9/hero-homescreen.png',
   },
   parameters: {
     layout: 'fullscreen',

@@ -9,7 +9,7 @@ export default {
     layout: 'fullscreen',
   },
   args: {
-    image: '/hero-blog.png',
+    image: 'https://i.ibb.co/2nZMYy9/hero-homescreen.png',
   },
   argTypes: {
     image: {
