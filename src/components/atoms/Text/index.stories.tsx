@@ -20,7 +20,11 @@ export default {
     weight: {
       control: { type: 'select' },
       options: ['Default', '600'],
-     
+    },
+    size: {
+      table: {
+        disable: true,
+      },
     },
     color: {
       control: { type: 'select' },

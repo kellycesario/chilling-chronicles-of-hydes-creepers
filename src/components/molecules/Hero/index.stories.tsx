@@ -9,7 +9,7 @@ export default {
     layout: 'fullscreen',
   },
   args: {
-    image: 'https://www.freepnglogos.com/uploads/pumpkin-png/vector-graphic-pumpkin-cartoon-orange-stem-39.png',
+    image: '/hero-blog.png',
   },
   argTypes: {
     image: {

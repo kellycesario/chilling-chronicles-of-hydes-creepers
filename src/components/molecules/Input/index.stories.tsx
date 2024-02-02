@@ -73,6 +73,6 @@ type Story = StoryObj<typeof input>
 
 export const Default: Story = {
   parameters: {
-    backgrounds: { default: 'dark-mode' },
+    backgrounds: { default: 'light-gray' },
   },
 } as Meta<typeof Input>

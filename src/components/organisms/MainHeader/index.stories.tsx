@@ -6,8 +6,7 @@ export default {
   title: 'Organisms/MainHeader',
   tags: ['autodocs'],
   args: {
-    image:
-      'https://www.freepnglogos.com/uploads/pumpkin-png/vector-graphic-pumpkin-cartoon-orange-stem-39.png',
+    image: '/hero-blog.png',
   },
   parameters: {
     layout: 'fullscreen',
