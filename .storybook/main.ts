@@ -30,7 +30,7 @@ const config: StorybookConfig = {
         ],
       },
     },
-    '@storybook/addon-mdx-gfm'
+    '@storybook/addon-mdx-gfm',
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -41,5 +41,17 @@ const config: StorybookConfig = {
     defaultName: 'Documentation',
   },
   staticDirs: ['../public'],
+  webpackFinal: async (config, { configType }) => {
+    if (config.resolve && config.resolve.alias) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        net: false,
+        tls: false,
+        child_process: false,
+      }
+    }
+
+    return config
+  },
 }
 export default config
