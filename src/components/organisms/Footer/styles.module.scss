@@ -8,7 +8,6 @@
   margin: 6.8rem 0;
   background-color: $white;
 
-
   &__list {
     display: flex;
     flex-direction: row;
@@ -30,5 +29,12 @@
   &__copyright {
     @extend .footer__credits;
     padding-inline: 2rem;
+  }
+
+  &__analytics {
+    @extend .footer__credits;
+    border: 0.1rem solid $purple;
+    border-radius: 0.8rem;
+    padding: 1rem;
   }
 }

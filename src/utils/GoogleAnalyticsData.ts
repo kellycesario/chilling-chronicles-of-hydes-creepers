@@ -1,5 +1,4 @@
-const { BetaAnalyticsDataClient } = require('@google-analytics/data')
-
+import { BetaAnalyticsDataClient } from '@google-analytics/data'
 const propertyId = process.env.GA_PROPERTY_ID
 
 const analyticsDataClient = new BetaAnalyticsDataClient({
@@ -9,30 +8,31 @@ const analyticsDataClient = new BetaAnalyticsDataClient({
   },
 })
 
-async function runReport() {
-  const [response] = await analyticsDataClient.runReport({
-    property: `properties/${propertyId}`,
-    dateRanges: [
-      {
-        startDate: '30daysAgo',
-        endDate: 'today',
-      },
-    ],
-    dimensions: [
-      {
-        name: 'year',
-      },
-    ],
-    metrics: [
-      {
-        name: 'activeUsers',
-      },
-    ],
-  })
+export async function runReport() {
+  try {
+    const [response] = await analyticsDataClient.runReport({
+      property: `properties/${propertyId}`,
+      dateRanges: [
+        {
+          startDate: '30daysAgo',
+          endDate: 'today',
+        },
+      ],
+      dimensions: [
+        {
+          name: 'year',
+        },
+      ],
+      metrics: [
+        {
+          name: 'activeUsers',
+        },
+      ],
+    })
 
-  response.rows.forEach(
-    (row: { dimensionValues: any[]; metricValues: any[] }) => {
-      console.log(row.dimensionValues[0], row.metricValues[0])
-    }
-  )
+    return response
+  } catch (error) {
+    console.error('Error:', error)
+    throw error
+  }
 }
