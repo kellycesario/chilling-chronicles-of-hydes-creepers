@@ -22,6 +22,7 @@
     "@types/react-dom": "18.2.7",
     "contentful": "^10.5.1",
     "date-fns": "^2.30.0",
+    "encoding": "^0.1.13",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,6 +30,7 @@
     "react-hotjar": "^6.1.0",
     "react-responsive": "^9.0.2",
     "react-use": "^17.4.0",
+    "request": "^2.88.2",
     "typescript": "5.1.6"
   },
   "devDependencies": {
