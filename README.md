@@ -21,7 +21,7 @@ To run the project:
 
 This project showcases the integration of Next.js 13 (App Router) with Contentful, creating a **`Chilling Blog`** featuring authentic reviews of 20 books by Edgar J Hyde (Creepers saga). This application, in a way, combines the author's previous background in Linguistics with the ongoing studies in Systems Analysis and Development.
 
-If you need more information about integrating with Contentful, visit the [README](/src/contentful/README.md) in the `'src/contentful'` directory.
+If you need more information about integrating with Contentful, visit the [README](/src/services/contentful/README.md) in the `'src/services/contentful'` directory.
 
 ## Project Status
 
